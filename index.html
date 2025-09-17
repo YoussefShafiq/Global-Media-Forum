@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GMF 2025 | Global Media Forum</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0066ff',
+                        secondary: '#00d4ff',
+                        accent: '#ff3366',
+                        dark: '#0a0b14',
+                        'gray-900': '#111827'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif']
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.8s ease-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'float': 'float 3s ease-in-out infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate'
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes glow {
+            from {
+                box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+            }
+
+            to {
+                box-shadow: 0 0 30px rgba(0, 212, 255, 0.8);
+            }
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(10, 11, 20, 0.8) 0%, rgba(102, 126, 234, 0.4) 100%);
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .neon-border {
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+            border: 1px solid rgba(0, 212, 255, 0.5);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #00d4ff, #0066ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body class="bg-dark text-white font-sans">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-effect">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center space-x-4">
+                    <img src="/src/assets/gmf_logo_2024.png" alt="GMF logo" class="h-14">
+                    <div class=" hidden md:block">
+                        <h1 class="text-xl font-bold text-white">Global Media Forum</h1>
+                        <p class="text-sm text-gray-300">2025 • Bonn, Germany</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#"
+                        class="text-gray-300 hover:text-secondary transition-colors duration-300 flex items-center space-x-2">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    <a href="#" class="text-gray-300 hover:text-secondary transition-colors duration-300">Speakers</a>
+                    <a href="#" class="text-gray-300 hover:text-secondary transition-colors duration-300">Program</a>
+                </div>
+
+                <!-- CTA Button -->
+                <button
+                    class="bg-gradient-to-r from-secondary to-primary px-6 py-3 rounded-full text-white font-semibold hover:shadow-lg hover:shadow-secondary/25 transition-all duration-300 transform hover:scale-105">
+                    Register Now
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background -->
+        <div class="absolute inset-0">
+            <img src="https://gmf-event.com/files/landingpage/header_xl.png" alt="Hero Background"
+                class="w-full h-full object-cover">
+            <div class="absolute inset-0 hero-gradient"></div>
+        </div>
+
+        <!-- Floating Elements -->
+        <div class="absolute top-20 left-10 w-20 h-20 bg-secondary/20 rounded-full blur-xl animate-float"></div>
+        <div class="absolute bottom-32 right-10 w-32 h-32 bg-primary/20 rounded-full blur-xl animate-float"
+            style="animation-delay: -1s;"></div>
+
+        <!-- Content -->
+        <div class="relative z-10 max-w-6xl mx-auto px-6 text-center">
+            <div class="animate-fade-in">
+                <h1 class="text-5xl md:text-7xl font-black mb-6">
+                    <span class="text-gradient">Global Media</span><br>
+                    <span class="text-white">Forum 2025</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto font-light">
+                    Shaping the future of media in an interconnected world. Join 900+ participants from 100+ countries.
+                </p>
+
+                <!-- Hero Stats -->
+                <div class="flex flex-wrap justify-center gap-8 mb-12">
+                    <div class="glass-effect rounded-2xl px-6 py-4 neon-border">
+                        <div class="text-3xl font-bold text-secondary">900+</div>
+                        <div class="text-gray-300 text-sm">Participants</div>
+                    </div>
+                    <div class="glass-effect rounded-2xl px-6 py-4 neon-border">
+                        <div class="text-3xl font-bold text-secondary">160+</div>
+                        <div class="text-gray-300 text-sm">Speakers</div>
+                    </div>
+                    <div class="glass-effect rounded-2xl px-6 py-4 neon-border">
+                        <div class="text-3xl font-bold text-secondary">100+</div>
+                        <div class="text-gray-300 text-sm">Countries</div>
+                    </div>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <button
+                        class="bg-gradient-to-r from-accent to-pink-500 px-8 py-4 rounded-full text-white font-bold text-lg hover:shadow-2xl hover:shadow-accent/30 transition-all duration-300 transform hover:scale-105 animate-glow">
+                        <i class="fas fa-ticket-alt mr-2"></i>
+                        Get Your Ticket
+                    </button>
+                    <button
+                        class="glass-effect px-8 py-4 rounded-full text-white font-semibold hover:bg-white/20 transition-all duration-300 border border-white/30">
+                        <i class="fas fa-play mr-2"></i>
+                        Watch Preview
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-2xl text-secondary"></i>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <!-- Section Header -->
+            <div class="text-center mb-16 animate-slide-up">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                    <span class="text-gradient">Why Join</span> <span class="text-white">GMF 2025?</span>
+                </h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                    Experience cutting-edge insights, network with industry leaders, and shape the future of global
+                    media.
+                </p>
+            </div>
+
+            <!-- Features Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Feature 1 -->
+                <div class="group card-hover">
+                    <div class="relative overflow-hidden rounded-2xl mb-6">
+                        <img src="https://a.travel-assets.com/findyours-php/viewfinder/images/res70/221000/221174-North-Rhine-Westphalia.jpg"
+                            alt="Bonn Location"
+                            class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <div class="bg-secondary/90 text-dark px-3 py-1 rounded-full text-sm font-semibold">
+                                New Venue
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white group-hover:text-secondary transition-colors">
+                        Heart of Bonn
+                    </h3>
+                    <p class="text-gray-400">
+                        Three iconic locations in Germany's former capital, offering a unique backdrop for global
+                        conversations.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="group card-hover">
+                    <div class="relative overflow-hidden rounded-2xl mb-6">
+                        <img src="https://www.basel.com/_Resources/Persistent/867eb1869c43067bec42e154230dc5957599e6f2/unterwegs-mit-dem-rhystaern-5-752x563.jpg"
+                            alt="Rhine Cruise"
+                            class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <div class="bg-accent/90 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                Exclusive
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white group-hover:text-secondary transition-colors">
+                        Rhine Dinner Cruise
+                    </h3>
+                    <p class="text-gray-400">
+                        Premium experience with networking dinner cruise along the historic Rhine River.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="group card-hover">
+                    <div class="relative overflow-hidden rounded-2xl mb-6">
+                        <img src="https://sc-cms-prod103-cdn-dsb5cvath4adbgd0.z01.azurefd.net/-/media/images/astoncarter/insights/articles/benefits_of_networking_article_image-jpg.jpg"
+                            alt="Networking"
+                            class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <div class="bg-primary/90 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                Connect
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white group-hover:text-secondary transition-colors">
+                        Global Network
+                    </h3>
+                    <p class="text-gray-400">
+                        Connect with media professionals, journalists, and thought leaders from around the world.
+                    </p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="group card-hover">
+                    <div class="relative overflow-hidden rounded-2xl mb-6">
+                        <img src="https://www.oxfordedu.ca/wp-content/uploads/2021/04/April-22-Train-for-a-career.jpg"
+                            alt="Workshops"
+                            class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <div class="bg-green-500/90 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                Learn
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white group-hover:text-secondary transition-colors">
+                        Hands-on Workshops
+                    </h3>
+                    <p class="text-gray-400">
+                        Interactive sessions covering the latest trends in digital media and journalism.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Highlights -->
+    <section class="py-20 bg-gradient-to-r from-gray-900 via-dark to-gray-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Content -->
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                        <span class="text-gradient">Program</span><br>
+                        <span class="text-white">Highlights</span>
+                    </h2>
+                    <p class="text-xl text-gray-400 mb-8">
+                        Discover groundbreaking sessions, keynote presentations, and interactive panels that will shape
+                        the future of media landscape.
+                    </p>
+
+                    <!-- Highlight List -->
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-2 h-2 bg-secondary rounded-full"></div>
+                            <span class="text-gray-300">Keynote speeches from industry pioneers</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-2 h-2 bg-secondary rounded-full"></div>
+                            <span class="text-gray-300">Interactive workshops and masterclasses</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-2 h-2 bg-secondary rounded-full"></div>
+                            <span class="text-gray-300">Panel discussions on emerging technologies</span>
+                        </div>
+                    </div>
+
+                    <button
+                        class="bg-gradient-to-r from-accent to-pink-500 px-8 py-4 rounded-full text-white font-bold hover:shadow-2xl hover:shadow-accent/30 transition-all duration-300 transform hover:scale-105">
+                        View Full Program <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+
+                <!-- Right Image -->
+                <div class="relative">
+                    <div class="relative overflow-hidden rounded-3xl shadow-2xl">
+                        <img src="https://www.deutschland.de/sites/default/files/media/image/120872150.jpg"
+                            alt="Program Highlights" class="w-full h-96 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark/50 to-transparent"></div>
+                    </div>
+                    <!-- Floating Card -->
+                    <div class="absolute -bottom-6 -left-6 glass-effect rounded-2xl p-4 neon-border">
+                        <div class="text-2xl font-bold text-secondary">3 Days</div>
+                        <div class="text-gray-300 text-sm">Intensive Program</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="py-16">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <!-- Share Section -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-bold text-white mb-4">Join the Conversation</h3>
+                <p class="text-gray-400 mb-6">Share your excitement and connect with fellow attendees</p>
+                <div class="flex justify-center space-x-6">
+                    <a href="#"
+                        class="w-12 h-12 bg-gradient-to-r from-blue-600 to-blue-500 rounded-full flex items-center justify-center hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-110">
+                        <i class="fab fa-linkedin-in text-white"></i>
+                    </a>
+                    <a href="#"
+                        class="w-12 h-12 bg-gradient-to-r from-gray-800 to-gray-700 rounded-full flex items-center justify-center hover:shadow-lg hover:shadow-gray-500/25 transition-all duration-300 transform hover:scale-110">
+                        <i class="fab fa-x-twitter text-white"></i>
+                    </a>
+                    <a href="#"
+                        class="w-12 h-12 bg-gradient-to-r from-blue-700 to-blue-600 rounded-full flex items-center justify-center hover:shadow-lg hover:shadow-blue-600/25 transition-all duration-300 transform hover:scale-110">
+                        <i class="fab fa-facebook-f text-white"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners -->
+    <section class="py-20 bg-gray-900/50">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-white">Trusted Partners</h2>
+
+            <!-- Main Partners -->
+            <div class="mb-12">
+                <h3 class="text-lg font-semibold text-secondary uppercase tracking-wider mb-6 text-center">Main Partners
+                </h3>
+                <div class="flex flex-wrap justify-center items-center gap-12">
+                    <div class="glass-effect p-6 rounded-2xl hover:bg-white/10 transition-all duration-300">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/DEgov-AA-Logo_en.svg/1200px-DEgov-AA-Logo_en.svg.png"
+                            alt="Federal Foreign Office" class="h-12 filter brightness-0 invert">
+                    </div>
+                    <div class="glass-effect p-6 rounded-2xl hover:bg-white/10 transition-all duration-300">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Coat_of_arms_of_North_Rhine-Westphalia.svg"
+                            alt="North Rhine-Westphalia" class="h-16 filter brightness-0 invert">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Public Partners -->
+            <div>
+                <h3 class="text-lg font-semibold text-secondary uppercase tracking-wider mb-6 text-center">Supporting
+                    Partners</h3>
+                <div class="flex flex-wrap justify-center items-center gap-8">
+                    <div class="glass-effect p-4 rounded-xl hover:bg-white/10 transition-all duration-300">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/eb/DEgov-BMZ-Logo_en.svg" alt="BMZ"
+                            class="h-10 filter brightness-0 invert">
+                    </div>
+                    <div class="glass-effect p-4 rounded-xl hover:bg-white/10 transition-all duration-300">
+                        <img src="https://www.ecpmf.eu/wp-content/uploads/2023/08/BKM_en_v2__Web_farbig.png" alt="BKM"
+                            class="h-10 filter brightness-0 invert">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Brand -->
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div
+                            class="w-10 h-10 bg-gradient-to-r from-secondary to-primary rounded-xl flex items-center justify-center">
+                            <span class="text-white font-bold">G</span>
+                        </div>
+                        <span class="text-xl font-bold text-white">GMF</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                        Connecting media professionals worldwide through meaningful dialogue and innovation.
+                    </p>
+                </div>
+
+                <!-- About -->
+                <div>
+                    <h4 class="font-semibold text-white mb-4">About</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-secondary transition-colors">Who We Are</a></li>
+                        <li><a href="#" class="hover:text-secondary transition-colors">Press Kit</a></li>
+                        <li><a href="#" class="hover:text-secondary transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Event -->
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Event</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-secondary transition-colors">Newsletter</a></li>
+                        <li><a href="#" class="hover:text-secondary transition-colors">FAQ</a></li>
+                        <li><a href="#" class="hover:text-secondary transition-colors">Accessibility</a></li>
+                    </ul>
+                </div>
+
+                <!-- Location -->
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Location</h4>
+                    <div class="text-gray-400 text-sm space-y-2">
+                        <p>Bonn, Germany</p>
+                        <a href="#" class="block hover:text-secondary transition-colors">View on Maps</a>
+                        <div class="flex space-x-4 pt-2">
+                            <a href="#" class="text-gray-400 hover:text-secondary transition-colors">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-secondary transition-colors">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-secondary transition-colors">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">© 2025 Deutsche Welle. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-secondary transition-colors text-sm">Privacy</a>
+                    <a href="#" class="text-gray-400 hover:text-secondary transition-colors text-sm">Terms</a>
+                    <a href="#" class="text-gray-400 hover:text-secondary transition-colors text-sm">Legal</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Add smooth scrolling animation on load
+        document.addEventListener('DOMContentLoaded', function () {
+            // Animate elements on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function (entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-slide-up');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all sections
+            document.querySelectorAll('section').forEach(section => {
+                observer.observe(section);
+            });
+
+            // Add parallax effect to hero background
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                const parallax = document.querySelector('section img');
+                if (parallax) {
+                    const speed = scrolled * 0.5;
+                    parallax.style.transform = `translateY(${speed}px)`;
+                }
+            });
+        });
+
+        // Add interactive hover effects
+        document.querySelectorAll('.card-hover').forEach(card => {
+            card.addEventListener('mouseenter', function () {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+
+            card.addEventListener('mouseleave', function () {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+</body>
+
+</html>
