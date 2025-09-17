@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speakers | GMF 2025</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0066ff',
+                        secondary: '#00d4ff',
+                        accent: '#ff3366',
+                        dark: '#0a0b14',
+                        'gray-900': '#111827'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif']
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.8s ease-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'slide-in': 'slideIn 0.5s ease-out',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'float': 'float 3s ease-in-out infinite'
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes glow {
+            from {
+                box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+            }
+
+            to {
+                box-shadow: 0 0 30px rgba(0, 212, 255, 0.8);
+            }
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .glass-dark {
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .neon-border {
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+            border: 1px solid rgba(0, 212, 255, 0.5);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #00d4ff, #0066ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .speaker-card {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .speaker-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
+        }
+
+        .speaker-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .speaker-card:hover::before {
+            left: 100%;
+        }
+
+        .category-filter {
+            transition: all 0.3s ease;
+        }
+
+        .category-filter.active {
+            background: linear-gradient(135deg, #0066ff, #00d4ff);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body class="bg-dark text-white font-sans min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-effect">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center space-x-4">
+                    <img src="https://registration.egymediaforum.com/img/logo-t.png" alt="GMF logo" class="h-14">
+                    <div class=" hidden md:block">
+                        <h1 class="text-xl font-bold text-white">Egypt Media Forum</h1>
+                        <p class="text-sm text-gray-300">2025 • Bonn, Germany</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../../index.html"
+                        class="text-gray-300 hover:text-secondary transition-colors duration-300 flex items-center space-x-2">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    <a href="" class="text-gray-300 hover:text-secondary transition-colors duration-300">Speakers</a>
+                    <a href="./program.html"
+                        class="text-gray-300 hover:text-secondary transition-colors duration-300">Program</a>
+                </div>
+
+                <!-- CTA Button -->
+                <button
+                    class="bg-gradient-to-r from-secondary to-primary px-6 py-3 rounded-full text-white font-semibold hover:shadow-lg hover:shadow-secondary/25 transition-all duration-300 transform hover:scale-105">
+                    Register Now
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section class="pt-32 pb-16 relative overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-float"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-float"
+            style="animation-delay: -1.5s;"></div>
+        <div
+            class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-accent/5 rounded-full blur-2xl">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-12 animate-fade-in">
+                <h1 class="text-5xl md:text-6xl font-black mb-6">
+                    <span class="text-gradient">Speakers</span><br>
+                    <span class="text-white">2025</span>
+                </h1>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto mb-8">
+                    Meet the brilliant minds shaping the future of global media. Industry pioneers, innovative thinkers,
+                    and visionary leaders from around the world.
+                </p>
+
+                <!-- Speaker Stats -->
+                <div class="flex flex-wrap justify-center gap-8 mb-12">
+                    <div class="glass-effect rounded-2xl px-6 py-4 neon-border">
+                        <div class="text-3xl font-bold text-secondary">160+</div>
+                        <div class="text-gray-300 text-sm">Expert Speakers</div>
+                    </div>
+                    <div class="glass-effect rounded-2xl px-6 py-4 neon-border">
+                        <div class="text-3xl font-bold text-secondary">50+</div>
+                        <div class="text-gray-300 text-sm">Countries</div>
+                    </div>
+                    <div class="glass-effect rounded-2xl px-6 py-4 neon-border">
+                        <div class="text-3xl font-bold text-secondary">25+</div>
+                        <div class="text-gray-300 text-sm">Industries</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Search and Filter Section -->
+            <div class="max-w-4xl mx-auto mb-12 animate-slide-up">
+                <div class="glass-effect rounded-2xl p-6 mb-8">
+                    <div class="flex flex-col lg:flex-row gap-4 items-center">
+                        <!-- Search Input -->
+                        <div class="flex-1 relative">
+                            <i
+                                class="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                            <input type="text" id="speaker-search"
+                                placeholder="Search speakers by name, title, or expertise..."
+                                class="w-full bg-transparent border border-gray-600 rounded-xl px-12 py-3 text-white placeholder-gray-400 focus:border-secondary focus:outline-none transition-colors">
+                        </div>
+
+                        <!-- Clear Filter -->
+                        <button id="clear-search"
+                            class="glass-dark px-6 py-3 rounded-xl text-gray-300 font-semibold hover:text-white transition-colors">
+                            <i class="fas fa-times mr-2"></i>
+                            Clear
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Category Filters -->
+                <div class="glass-effect rounded-2xl p-6">
+                    <h3 class="text-lg font-semibold text-white mb-4 text-center">Filter by Expertise</h3>
+                    <div class="flex flex-wrap justify-center gap-3">
+                        <button
+                            class="category-filter active glass-dark px-6 py-3 rounded-full text-sm font-medium text-white transition-all"
+                            data-category="all">
+                            <i class="fas fa-star mr-2"></i>All Speakers
+                        </button>
+                        <button
+                            class="category-filter glass-dark px-6 py-3 rounded-full text-sm font-medium text-gray-300 hover:text-white transition-all"
+                            data-category="keynote">
+                            <i class="fas fa-microphone mr-2"></i>Keynote
+                        </button>
+                        <button
+                            class="category-filter glass-dark px-6 py-3 rounded-full text-sm font-medium text-gray-300 hover:text-white transition-all"
+                            data-category="ai">
+                            <i class="fas fa-robot mr-2"></i>AI & Tech
+                        </button>
+                        <button
+                            class="category-filter glass-dark px-6 py-3 rounded-full text-sm font-medium text-gray-300 hover:text-white transition-all"
+                            data-category="journalism">
+                            <i class="fas fa-newspaper mr-2"></i>Journalism
+                        </button>
+                        <button
+                            class="category-filter glass-dark px-6 py-3 rounded-full text-sm font-medium text-gray-300 hover:text-white transition-all"
+                            data-category="business">
+                            <i class="fas fa-chart-line mr-2"></i>Business
+                        </button>
+                        <button
+                            class="category-filter glass-dark px-6 py-3 rounded-full text-sm font-medium text-gray-300 hover:text-white transition-all"
+                            data-category="ethics">
+                            <i class="fas fa-shield-alt mr-2"></i>Ethics
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Speakers Grid -->
+    <section class="py-16 bg-gray-900/30">
+        <div class="max-w-7xl mx-auto px-6">
+            <!-- Speaker Cards Grid -->
+            <div id="speakers-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+
+                <!-- Speaker 1 - Keynote -->
+                <div class="speaker-card glass-effect rounded-2xl overflow-hidden" data-category="keynote"
+                    data-name="Dr. Sarah Mitchell" data-title="Editor-in-Chief, Global Times">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b550?w=400&h=400&fit=crop&crop=face"
+                            alt="Dr. Sarah Mitchell" class="w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/50 to-transparent"></div>
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-accent/90 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                                <i class="fas fa-crown mr-1"></i>Keynote
+                            </span>
+                        </div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <h3 class="text-xl font-bold text-white mb-1">Dr. Sarah Mitchell</h3>
+                            <p class="text-secondary font-semibold text-sm">Editor-in-Chief, Global Times</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-400 text-sm mb-4">Award-winning journalist with 20+ years of experience in
+                            digital media transformation</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-500/20 text-blue-400 px-2 py-1 rounded-full text-xs">Digital
+                                Media</span>
+                            <span
+                                class="bg-green-500/20 text-green-400 px-2 py-1 rounded-full text-xs">Leadership</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div class="flex space-x-2">
+                                <a href="#"
+                                    class="w-8 h-8 bg-blue-600/20 hover:bg-blue-600/40 rounded-full flex items-center justify-center transition-colors">
+                                    <i class="fab fa-linkedin-in text-blue-400 text-sm"></i>
+                                </a>
+                                <a href="#"
+                                    class="w-8 h-8 bg-gray-600/20 hover:bg-gray-600/40 rounded-full flex items-center justify-center transition-colors">
+                                    <i class="fab fa-twitter text-gray-400 text-sm"></i>
+                                </a>
+                            </div>
+                            <button class="text-secondary hover:text-primary font-semibold text-sm transition-colors">
+                                View Bio <i class="fas fa-arrow-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Speaker 2 - AI Expert -->
+                <div class="speaker-card glass-effect rounded-2xl overflow-hidden" data-category="ai"
+                    data-name="Prof. Marcus Chen" data-title="Director of AI Research, TechMedia Labs">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face"
+                            alt="Prof. Marcus Chen" class="w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/50 to-transparent"></div>
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-purple-500/90 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                                <i class="fas fa-robot mr-1"></i>AI Expert
+                            </span>
+                        </div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <h3 class="text-xl font-bold text-white mb-1">Prof. Marcus Chen</h3>
+                            <p class="text-secondary font-semibold text-sm">Director of AI Research, TechMedia Labs</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-400 text-sm mb-4">Leading expert in AI applications for media and content
+                            automation technologies</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-cyan-500/20 text-cyan-400 px-2 py-1 rounded-full text-xs">AI/ML</span>
+                            <span class="bg-pink-500/20 text-pink-400 px-2 py-1 rounded-full text-xs">Automation</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div class="flex space-x-2">
+                                <a href="#"
+                                    class="w-8 h-8 bg-blue-600/20 hover:bg-blue-600/40 rounded-full flex items-center justify-center transition-colors">
+                                    <i class="fab fa-linkedin-in text-blue-400 text-sm"></i>
+                                </a>
+                                <a href="#"
+                                    class="w-8 h-8 bg-purple-600/20 hover:bg-purple-600/40 rounded-full flex items-center justify-center transition-colors">
+                                    <i class="fab fa-github text-purple-400 text-sm"></i>
+                                </a>
+                            </div>
+                            <button class="text-secondary hover:text-primary font-semibold text-sm transition-colors">
+                                View Bio <i class="fas fa-arrow-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Speaker 3 - Ethics Expert -->
+                <div class="speaker-card glass-effect rounded-2xl overflow-hidden" data-category="ethics"
+                    data-name="Elena Rodriguez" data-title="CEO, MediaInnovate Global">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?w=400&h=400&fit=crop&crop=face"
+                            alt="Elena Rodriguez" class="w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/50 to-transparent"></div>
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-green-500/90 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                                <i class="fas fa-shield-alt mr-1"></i>Ethics
+                            </span>
+                        </div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <h3 class="text-xl font-bold text-white mb-1">Elena Rodriguez</h3>
+                            <p class="text-secondary font-semibold text-sm">CEO, MediaInnovate Global</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-400 text-sm mb-4">Pioneering media entrepreneur advocating for ethical
+                            journalism practices worldwide</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-purple-500/20 text-purple-400 px-2 py-1 rounded-full text-xs">Ethics</span>
+                            <span
+                                class="bg-orange-500/20 text-orange-400 px-2 py-1 rounded-full text-xs">Leadership</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div class="flex space-x-2">
+                                <a href="#"
+                                    class="w-8 h-8 bg-blue-600/20 hover:bg-blue-600/40 rounded-full flex items-center justify-center transition-colors">
+                                    <i class="fab fa-linkedin-in text-blue-400 text-sm"></i>
+                                </a>
+                                <a href="#"
+                                    class="w-8 h-8 bg-green-600/20 hover:bg-green-600/40 rounded-full flex items-center justify-center transition-colors">
+                                    <i class="fas fa-podcast text-green-400 text-sm"></i>
+                                </a>
+                            </div>
+                            <button class="text-secondary hover:text-primary font-semibold text-sm transition-colors">
+                                View Bio <i class="fas fa-arrow-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Speaker 4 - Journalist -->
+                <div class="speaker-card glass-effect rounded-2xl overflow-hidden" data-category="journalism"
+                    data-name="James Thompson" data-title="Data Journalist, Reuters">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
+                            alt="James Thompson" class="w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/50 to-transparent"></div>
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-blue-500/90 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                                <i class="fas fa-newspaper mr-1"></i>Journalist
+                            </span>
+                        </div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <h3 class="text-xl font-bold text-white mb-1">James Thompson</h3>
+                            <p class="text-secondary font-semibold text-sm">Data Journalist, Reuters</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-400 text-sm mb-4">Specializing in investigative data analysis and compelling
+                            visualizations</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-500/20 text-blue-400 px-2 py-1 rounded-full text-xs">Data
+                                Science</span>
+                            <span
+                                class="bg-green-500/20 text-green-400 px-2 py-1 rounded-full text-xs">Visualization</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div class="flex space-x-2">
+                                <a href="#"
+                                    class="w-8 h-8 bg-blue-600/20 hover:bg-blue-600/40 rounded-full flex items-center justify-center transition-colors">
+                                    <i class="fab fa-linkedin-in text-blue-400 text-sm"></i>
+                                </a>
+                                <a href="#"
+                                    class="w-8 h-8 bg-gray-600/20 hover:bg-gray-600/40 rounded-full flex items-center justify-center transition-colors">
+                                    <i class="fab fa-twitter text-gray-400 text-sm"></i>
+                                </a>
+                            </div>
+                            <button class="text-secondary hover:text-primary font-semibold text-sm transition-colors">
+                                View Bio <i class="fas fa-arrow-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Speaker 5 - Business Expert -->
+                <div class="speaker-card glass-effect rounded-2xl overflow-hidden" data-category="business"
+                    data-name="Dr. Amara Okafor" data-title="Media Strategy Consultant">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face"
+                            alt="Dr. Amara Okafor" class="w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/50 to-transparent"></div>
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-yellow-500/90 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                                <i class="fas fa-chart-line mr-1"></i>Business
+                            </span>
+                        </div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <h3 class="text-xl font-bold text-white mb-1">Dr. Amara Okafor</h3>
+                            <p class="text-secondary font-semibold text-sm">Media Strategy Consultant</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-400 text-sm mb-4">Leading researcher in digital media strategy and
+                            monetization models</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="bg-yellow-500/20 text-yellow-400 px-2 py-1 rounded-full text-xs">Strategy</span>
+                            <span
+                                class="bg-orange-500/20 text-orange-400 px-2 py-1 rounded-full text-xs">Business</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div class="flex space-x-2">
+                                <a href="#"
+                                    class="w-8 h-8 bg-blue-600/20 hover:bg-blue-600/40 rounded-full flex items-center justify-center transition-colors">
+                                    <i class="fab fa-linkedin-in text-blue-400 text-sm"></i>
+                                </a>
+                                <a href="#"
+                                    class="w-8 h-8 bg-red-600/20 hover:bg-red-600/40 rounded-full flex items-center justify-center transition-colors">
+                                    <i class="fas fa-globe text-red-400 text-sm"></i>
+                                </a>
+                            </div>
+                            <button class="text-secondary hover:text-primary font-semibold text-sm transition-colors">
+                                View Bio <i class="fas fa-arrow-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Speaker 6 - AI Expert -->
+                <div class="speaker-card glass-effect rounded-2xl overflow-hidden" data-category="ai"
+                    data-name="Michael Zhang" data-title="CTO, NewsFlow AI">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop&crop=face"
+                            alt="Michael Zhang" class="w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/50 to-transparent"></div>
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-purple-500/90 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                                <i class="fas fa-robot mr-1"></i>AI Expert
+                            </span>
+                        </div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <h3 class="text-xl font-bold text-white mb-1">Michael Zhang</h3>
+                            <p class="text-secondary font-semibold text-sm">CTO, NewsFlow AI</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-400 text-sm mb-4">Pioneering automated content generation and AI-driven
+                            newsroom technologies</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-cyan-500/20 text-cyan-400 px-2 py-1 rounded-full text-xs">AI/ML</span>
+                            <span class="bg-pink-500/20 text-pink-400 px-2 py-1 rounded-full text-xs">Automation</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div class="flex space-x-2">
+                                <a href="#"
+                                    class="w-8 h-8 bg-blue-600/20 hover:bg-blue-600/40 rounded-full flex items-center justify-center transition-colors">
+                                    <i class="fab fa-linkedin-in text-blue-400 text-sm"></i>
+                                </a>
+                                <a href="#"
+                                    class="w-8 h-8 bg-purple-600/20 hover:bg-purple-600/40 rounded-full flex items-center justify-center transition-colors">
+                                    <i class="fab fa-github text-purple-400 text-sm"></i>
+                                </a>
+                            </div>
+                            <button class="text-secondary hover:text-primary font-semibold text-sm transition-colors">
+                                View Bio <i class="fas fa-arrow-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Brand -->
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 rounded-xl flex items-center justify-center">
+                            <img src="https://egymediaforum.com/assets/front_asset/img/mainAnimation/Sympol-xl.png"
+                                alt="EMF logo">
+                        </div>
+                        <span class="text-xl font-bold text-white">EMF</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                        Connecting media professionals worldwide through meaningful dialogue and innovation.
+                    </p>
+                </div>
+
+                <!-- About -->
+                <div>
+                    <h4 class="font-semibold text-white mb-4">About</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-secondary transition-colors">Who We Are</a></li>
+                        <li><a href="#" class="hover:text-secondary transition-colors">Press Kit</a></li>
+                        <li><a href="#" class="hover:text-secondary transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Event -->
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Event</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-secondary transition-colors">Newsletter</a></li>
+                        <li><a href="#" class="hover:text-secondary transition-colors">FAQ</a></li>
+                        <li><a href="#" class="hover:text-secondary transition-colors">Accessibility</a></li>
+                    </ul>
+                </div>
+
+                <!-- Location -->
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Location</h4>
+                    <div class="text-gray-400 text-sm space-y-2">
+                        <p>Bonn, Germany</p>
+                        <a href="#" class="block hover:text-secondary transition-colors">View on Maps</a>
+                        <div class="flex space-x-4 pt-2">
+                            <a href="#" class="text-gray-400 hover:text-secondary transition-colors">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-secondary transition-colors">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-secondary transition-colors">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">© 2025 Deutsche Welle. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-secondary transition-colors text-sm">Privacy</a>
+                    <a href="#" class="text-gray-400 hover:text-secondary transition-colors text-sm">Terms</a>
+                    <a href="#" class="text-gray-400 hover:text-secondary transition-colors text-sm">Legal</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const searchInput = document.getElementById("speaker-search");
+            const clearBtn = document.getElementById("clear-search");
+            const categoryBtns = document.querySelectorAll(".category-filter");
+            const speakerCards = document.querySelectorAll(".speaker-card");
+
+            let activeCategory = "all";
+
+            // Function to filter speakers
+            function filterSpeakers() {
+                const searchQuery = searchInput.value.toLowerCase();
+
+                speakerCards.forEach(card => {
+                    const name = card.getAttribute("data-name").toLowerCase();
+                    const title = card.getAttribute("data-title").toLowerCase();
+                    const category = card.getAttribute("data-category").toLowerCase();
+
+                    const matchesSearch =
+                        name.includes(searchQuery) || title.includes(searchQuery);
+                    const matchesCategory =
+                        activeCategory === "all" || category === activeCategory;
+
+                    if (matchesSearch && matchesCategory) {
+                        card.style.display = "block";
+                    } else {
+                        card.style.display = "none";
+                    }
+                });
+            }
+
+            // Live search
+            searchInput.addEventListener("input", filterSpeakers);
+
+            // Clear search
+            clearBtn.addEventListener("click", () => {
+                searchInput.value = "";
+                activeCategory = "all";
+                categoryBtns.forEach(btn => btn.classList.remove("active"));
+                document
+                    .querySelector('[data-category="all"]')
+                    .classList.add("active");
+                filterSpeakers();
+            });
+
+            // Category filter buttons
+            categoryBtns.forEach(btn => {
+                btn.addEventListener("click", () => {
+                    categoryBtns.forEach(b => b.classList.remove("active"));
+                    btn.classList.add("active");
+                    activeCategory = btn.getAttribute("data-category");
+                    filterSpeakers();
+                });
+            });
+        });
+    </script>
+
+</body>
