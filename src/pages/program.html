@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program Schedule | GMF 2025</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0066ff',
+                        secondary: '#00d4ff',
+                        accent: '#ff3366',
+                        dark: '#0a0b14',
+                        'gray-900': '#111827'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif']
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.8s ease-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'slide-in': 'slideIn 0.5s ease-out',
+                        'glow': 'glow 2s ease-in-out infinite alternate'
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes glow {
+            from {
+                box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+            }
+
+            to {
+                box-shadow: 0 0 30px rgba(0, 212, 255, 0.8);
+            }
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .glass-dark {
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .neon-border {
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+            border: 1px solid rgba(0, 212, 255, 0.5);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #00d4ff, #0066ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .time-line {
+            position: relative;
+        }
+
+        .time-line::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #00d4ff, #0066ff);
+            border-radius: 1px;
+        }
+
+        .time-slot:hover {
+            transform: translateX(5px);
+            transition: all 0.3s ease;
+        }
+
+        .filter-tag {
+            transition: all 0.3s ease;
+        }
+
+        .filter-tag:hover {
+            transform: scale(1.05);
+        }
+
+        .active-day {
+            background: linear-gradient(135deg, #0066ff, #00d4ff);
+        }
+
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            gap: 0;
+        }
+
+        .time-header {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(0, 102, 255, 0.1));
+        }
+    </style>
+</head>
+
+<body class="bg-dark text-white font-sans min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-effect">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center space-x-4">
+                    <img src="https://registration.egymediaforum.com/img/logo-t.png" alt="GMF logo" class="h-14">
+                    <div class=" hidden md:block">
+                        <h1 class="text-xl font-bold text-white">Egypt Media Forum</h1>
+                        <p class="text-sm text-gray-300">2025 • Bonn, Germany</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../../index.html"
+                        class="text-gray-300 hover:text-secondary transition-colors duration-300 flex items-center space-x-2">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    <a href="#" class="text-gray-300 hover:text-secondary transition-colors duration-300">Speakers</a>
+                    <a href="./src/pages/program.html"
+                        class="text-gray-300 hover:text-secondary transition-colors duration-300">Program</a>
+                </div>
+
+                <!-- CTA Button -->
+                <button
+                    class="bg-gradient-to-r from-secondary to-primary px-6 py-3 rounded-full text-white font-semibold hover:shadow-lg hover:shadow-secondary/25 transition-all duration-300 transform hover:scale-105">
+                    Register Now
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section class="pt-32 pb-16 relative overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-secondary/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-12 animate-fade-in">
+                <h1 class="text-5xl md:text-6xl font-black mb-6">
+                    <span class="text-gradient">Program</span><br>
+                    <span class="text-white">Schedule</span>
+                </h1>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                    Explore our comprehensive 3-day program featuring keynotes, panels, workshops, and networking
+                    sessions.
+                </p>
+            </div>
+
+            <!-- Search and Filter Section -->
+            <div class="max-w-4xl mx-auto mb-12 animate-slide-up">
+                <div class="glass-effect rounded-2xl p-6 mb-8">
+                    <div class="flex flex-col lg:flex-row gap-4 items-center">
+                        <!-- Search Input -->
+                        <div class="flex-1 relative">
+                            <i
+                                class="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                            <input type="text" placeholder="Search sessions, speakers, or topics..."
+                                class="w-full bg-transparent border border-gray-600 rounded-xl px-12 py-3 text-white placeholder-gray-400 focus:border-secondary focus:outline-none transition-colors">
+                        </div>
+
+                        <!-- Download Button -->
+                        <button
+                            class="bg-gradient-to-r from-accent to-pink-500 px-6 py-3 rounded-xl text-white font-semibold hover:shadow-lg hover:shadow-accent/25 transition-all duration-300 transform hover:scale-105">
+                            <i class="fas fa-download mr-2"></i>
+                            Download Schedule
+                        </button>
+
+                        <!-- Clear Filter -->
+                        <button
+                            class="glass-dark px-6 py-3 rounded-xl text-gray-300 font-semibold hover:text-white transition-colors">
+                            <i class="fas fa-times mr-2"></i>
+                            Clear Filters
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Event Type Filters -->
+                <div class="mb-6">
+                    <h3 class="text-lg font-semibold text-white mb-4">Event Types</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <button
+                            class="filter-tag glass-effect px-4 py-2 rounded-full text-sm font-medium text-gray-300 hover:text-white hover:bg-white/20 transition-all">
+                            <i class="fas fa-microphone mr-2"></i>Keynotes
+                        </button>
+                        <button
+                            class="filter-tag glass-effect px-4 py-2 rounded-full text-sm font-medium text-gray-300 hover:text-white hover:bg-white/20 transition-all">
+                            <i class="fas fa-users mr-2"></i>Panel Discussions
+                        </button>
+                        <button
+                            class="filter-tag glass-effect px-4 py-2 rounded-full text-sm font-medium text-gray-300 hover:text-white hover:bg-white/20 transition-all">
+                            <i class="fas fa-tools mr-2"></i>Workshops
+                        </button>
+                        <button
+                            class="filter-tag glass-effect px-4 py-2 rounded-full text-sm font-medium text-gray-300 hover:text-white hover:bg-white/20 transition-all">
+                            <i class="fas fa-network-wired mr-2"></i>Networking
+                        </button>
+                        <button
+                            class="filter-tag glass-effect px-4 py-2 rounded-full text-sm font-medium text-gray-300 hover:text-white hover:bg-white/20 transition-all">
+                            <i class="fas fa-utensils mr-2"></i>Social Events
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Days -->
+    <section class="pb-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <!-- Day Tabs -->
+            <div class="flex flex-col sm:flex-row justify-center mb-12 gap-4">
+                <button
+                    class="active-day px-8 py-4 rounded-xl font-bold text-white shadow-lg transition-all duration-300">
+                    <i class="fas fa-calendar-day mr-2"></i>
+                    Monday, July 7, 2025
+                </button>
+                <button
+                    class="glass-effect px-8 py-4 rounded-xl font-semibold text-gray-300 hover:text-white hover:bg-white/20 transition-all duration-300">
+                    <i class="fas fa-calendar-day mr-2"></i>
+                    Tuesday, July 8, 2025
+                </button>
+                <button
+                    class="glass-effect px-8 py-4 rounded-xl font-semibold text-gray-300 hover:text-white hover:bg-white/20 transition-all duration-300">
+                    <i class="fas fa-calendar-day mr-2"></i>
+                    Wednesday, July 9, 2025
+                </button>
+            </div>
+
+            <!-- Schedule Content -->
+            <div class="grid grid-cols-1 xl:grid-cols-2 gap-8">
+
+                <!-- Morning Schedule -->
+                <div class="glass-effect rounded-2xl p-6 animate-slide-in">
+                    <div class="flex items-center mb-6">
+                        <div class="w-3 h-3 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full mr-3"></div>
+                        <h3 class="text-2xl font-bold text-white">Morning Sessions</h3>
+                    </div>
+
+                    <div class="time-line pl-6 space-y-6">
+                        <!-- 08:00 -->
+                        <div class="time-slot relative">
+                            <div class="absolute -left-6 w-4 h-4 bg-secondary rounded-full border-2 border-dark"></div>
+                            <div class="glass-dark rounded-xl p-4 hover:bg-white/10 transition-all duration-300">
+                                <div class="flex justify-between items-start mb-2">
+                                    <span class="text-secondary font-bold">08:00</span>
+                                    <span
+                                        class="bg-green-500/20 text-green-400 px-2 py-1 rounded-full text-xs font-semibold">Registration</span>
+                                </div>
+                                <h4 class="font-semibold text-white mb-1">Registration & Welcome Coffee</h4>
+                                <p class="text-gray-400 text-sm">Main Lobby</p>
+                            </div>
+                        </div>
+
+                        <!-- 08:15 -->
+                        <div class="time-slot relative">
+                            <div class="absolute -left-6 w-4 h-4 bg-secondary rounded-full border-2 border-dark"></div>
+                            <div class="glass-dark rounded-xl p-4 hover:bg-white/10 transition-all duration-300">
+                                <div class="flex justify-between items-start mb-2">
+                                    <span class="text-secondary font-bold">08:15</span>
+                                    <span
+                                        class="bg-blue-500/20 text-blue-400 px-2 py-1 rounded-full text-xs font-semibold">Networking</span>
+                                </div>
+                                <h4 class="font-semibold text-white mb-1">Welcome Networking Session</h4>
+                                <p class="text-gray-400 text-sm mb-2">Connect with fellow media professionals</p>
+                                <div class="flex items-center text-xs text-gray-500">
+                                    <i class="fas fa-map-marker-alt mr-1"></i>
+                                    Conference Hall A
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 08:30 -->
+                        <div class="time-slot relative">
+                            <div class="absolute -left-6 w-4 h-4 bg-secondary rounded-full border-2 border-dark"></div>
+                            <div class="glass-dark rounded-xl p-4 hover:bg-white/10 transition-all duration-300">
+                                <div class="flex justify-between items-start mb-2">
+                                    <span class="text-secondary font-bold">08:30</span>
+                                    <span
+                                        class="bg-purple-500/20 text-purple-400 px-2 py-1 rounded-full text-xs font-semibold">Keynote</span>
+                                </div>
+                                <h4 class="font-semibold text-white mb-1">Opening Keynote: "The Future of Digital
+                                    Journalism"</h4>
+                                <p class="text-gray-400 text-sm mb-2">Dr. Sarah Mitchell - Editor-in-Chief, Global Times
+                                </p>
+                                <div class="flex items-center text-xs text-gray-500">
+                                    <i class="fas fa-clock mr-1"></i>
+                                    45 minutes
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 08:45 -->
+                        <div class="time-slot relative">
+                            <div class="absolute -left-6 w-4 h-4 bg-secondary rounded-full border-2 border-dark"></div>
+                            <div class="glass-dark rounded-xl p-4 hover:bg-white/10 transition-all duration-300">
+                                <div class="flex justify-between items-start mb-2">
+                                    <span class="text-secondary font-bold">08:45</span>
+                                    <span
+                                        class="bg-orange-500/20 text-orange-400 px-2 py-1 rounded-full text-xs font-semibold">Workshop</span>
+                                </div>
+                                <h4 class="font-semibold text-white mb-1">AI in Newsroom Operations</h4>
+                                <p class="text-gray-400 text-sm mb-2">Hands-on workshop with industry tools</p>
+                                <div class="flex items-center text-xs text-gray-500 mb-2">
+                                    <i class="fas fa-users mr-1"></i>
+                                    Limited to 30 participants
+                                </div>
+                                <div class="flex items-center text-xs text-gray-500">
+                                    <i class="fas fa-map-marker-alt mr-1"></i>
+                                    Workshop Room B
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 09:00 -->
+                        <div class="time-slot relative">
+                            <div class="absolute -left-6 w-4 h-4 bg-secondary rounded-full border-2 border-dark"></div>
+                            <div class="glass-dark rounded-xl p-4 hover:bg-white/10 transition-all duration-300">
+                                <div class="flex justify-between items-start mb-2">
+                                    <span class="text-secondary font-bold">09:00</span>
+                                    <span
+                                        class="bg-red-500/20 text-red-400 px-2 py-1 rounded-full text-xs font-semibold">Panel</span>
+                                </div>
+                                <h4 class="font-semibold text-white mb-1">Panel: "Media Ethics in the Digital Age"</h4>
+                                <p class="text-gray-400 text-sm mb-2">Featuring experts from 5 different countries</p>
+                                <div class="flex items-center text-xs text-gray-500">
+                                    <i class="fas fa-microphone mr-1"></i>
+                                    Q&A Session Included
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 09:15 -->
+                        <div class="time-slot relative">
+                            <div class="absolute -left-6 w-4 h-4 bg-secondary rounded-full border-2 border-dark"></div>
+                            <div class="glass-dark rounded-xl p-4 hover:bg-white/10 transition-all duration-300">
+                                <div class="flex justify-between items-start mb-2">
+                                    <span class="text-secondary font-bold">09:15</span>
+                                    <span
+                                        class="bg-green-500/20 text-green-400 px-2 py-1 rounded-full text-xs font-semibold">Break</span>
+                                </div>
+                                <h4 class="font-semibold text-white mb-1">Coffee Break & Networking</h4>
+                                <p class="text-gray-400 text-sm">Refreshments provided</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Afternoon Schedule -->
+                <div class="glass-effect rounded-2xl p-6 animate-slide-in" style="animation-delay: 0.2s;">
+                    <div class="flex items-center mb-6">
+                        <div class="w-3 h-3 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full mr-3"></div>
+                        <h3 class="text-2xl font-bold text-white">Afternoon Sessions</h3>
+                    </div>
+
+                    <div class="time-line pl-6 space-y-6">
+                        <!-- 08:00 -->
+                        <div class="time-slot relative">
+                            <div class="absolute -left-6 w-4 h-4 bg-secondary rounded-full border-2 border-dark"></div>
+                            <div class="glass-dark rounded-xl p-4 hover:bg-white/10 transition-all duration-300">
+                                <div class="flex justify-between items-start mb-2">
+                                    <span class="text-secondary font-bold">08:00</span>
+                                    <span
+                                        class="bg-cyan-500/20 text-cyan-400 px-2 py-1 rounded-full text-xs font-semibold">Masterclass</span>
+                                </div>
+                                <h4 class="font-semibold text-white mb-1">Data Journalism Masterclass</h4>
+                                <p class="text-gray-400 text-sm mb-2">Advanced techniques and tools</p>
+                                <div class="flex items-center text-xs text-gray-500">
+                                    <i class="fas fa-laptop mr-1"></i>
+                                    Bring your own device
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 08:15 -->
+                        <div class="time-slot relative">
+                            <div class="absolute -left-6 w-4 h-4 bg-secondary rounded-full border-2 border-dark"></div>
+                            <div class="glass-dark rounded-xl p-4 hover:bg-white/10 transition-all duration-300">
+                                <div class="flex justify-between items-start mb-2">
+                                    <span class="text-secondary font-bold">08:15</span>
+                                    <span
+                                        class="bg-indigo-500/20 text-indigo-400 px-2 py-1 rounded-full text-xs font-semibold">Discussion</span>
+                                </div>
+                                <h4 class="font-semibold text-white mb-1">Roundtable: Global Media Trends</h4>
+                                <p class="text-gray-400 text-sm mb-2">Interactive discussion with industry leaders</p>
+                                <div class="flex items-center text-xs text-gray-500">
+                                    <i class="fas fa-comments mr-1"></i>
+                                    Open discussion format
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 08:30 -->
+                        <div class="time-slot relative">
+                            <div class="absolute -left-6 w-4 h-4 bg-secondary rounded-full border-2 border-dark"></div>
+                            <div class="glass-dark rounded-xl p-4 hover:bg-white/10 transition-all duration-300">
+                                <div class="flex justify-between items-start mb-2">
+                                    <span class="text-secondary font-bold">08:30</span>
+                                    <span
+                                        class="bg-pink-500/20 text-pink-400 px-2 py-1 rounded-full text-xs font-semibold">Special</span>
+                                </div>
+                                <h4 class="font-semibold text-white mb-1">Innovation Showcase</h4>
+                                <p class="text-gray-400 text-sm mb-2">Latest media technology demonstrations</p>
+                                <div class="flex items-center text-xs text-gray-500">
+                                    <i class="fas fa-rocket mr-1"></i>
+                                    Live demos & trials
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Special Event -->
+                        <div class="time-slot relative">
+                            <div
+                                class="absolute -left-6 w-4 h-4 bg-accent rounded-full border-2 border-dark animate-pulse">
+                            </div>
+                            <div class="glass-dark rounded-xl p-4 border border-accent/30 neon-border">
+                                <div class="flex justify-between items-start mb-2">
+                                    <span class="text-accent font-bold">Evening</span>
+                                    <span
+                                        class="bg-accent/20 text-accent px-2 py-1 rounded-full text-xs font-semibold">Exclusive</span>
+                                </div>
+                                <h4 class="font-semibold text-white mb-1">Rhine River Dinner Cruise</h4>
+                                <p class="text-gray-400 text-sm mb-2">Networking dinner with panoramic views</p>
+                                <div class="flex items-center text-xs text-accent">
+                                    <i class="fas fa-ship mr-1"></i>
+                                    Full access ticket holders only
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="mt-12 text-center">
+                <div class="glass-effect rounded-2xl p-8 max-w-2xl mx-auto">
+                    <h3 class="text-2xl font-bold text-white mb-4">Need More Information?</h3>
+                    <p class="text-gray-400 mb-6">Get detailed session descriptions, speaker bios, and venue information
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button
+                            class="bg-gradient-to-r from-secondary to-primary px-6 py-3 rounded-xl text-white font-semibold hover:shadow-lg hover:shadow-secondary/25 transition-all duration-300 transform hover:scale-105">
+                            <i class="fas fa-file-pdf mr-2"></i>
+                            Download Full Program
+                        </button>
+                        <button
+                            class="glass-dark px-6 py-3 rounded-xl text-gray-300 font-semibold hover:text-white hover:bg-white/20 transition-all">
+                            <i class="fas fa-calendar-plus mr-2"></i>
+                            Add to Calendar
+                        </button>
+                        <button
+                            class="glass-dark px-6 py-3 rounded-xl text-gray-300 font-semibold hover:text-white hover:bg-white/20 transition-all">
+                            <i class="fas fa-bell mr-2"></i>
+                            Get Reminders
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Brand -->
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 rounded-xl flex items-center justify-center">
+                            <img src="https://egymediaforum.com/assets/front_asset/img/mainAnimation/Sympol-xl.png"
+                                alt="EMF logo">
+                        </div>
+                        <span class="text-xl font-bold text-white">EMF</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                        Connecting media professionals worldwide through meaningful dialogue and innovation.
+                    </p>
+                </div>
+
+                <!-- About -->
+                <div>
+                    <h4 class="font-semibold text-white mb-4">About</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-secondary transition-colors">Who We Are</a></li>
+                        <li><a href="#" class="hover:text-secondary transition-colors">Press Kit</a></li>
+                        <li><a href="#" class="hover:text-secondary transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Event -->
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Event</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-secondary transition-colors">Newsletter</a></li>
+                        <li><a href="#" class="hover:text-secondary transition-colors">FAQ</a></li>
+                        <li><a href="#" class="hover:text-secondary transition-colors">Accessibility</a></li>
+                    </ul>
+                </div>
+
+                <!-- Location -->
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Location</h4>
+                    <div class="text-gray-400 text-sm space-y-2">
+                        <p>Bonn, Germany</p>
+                        <a href="#" class="block hover:text-secondary transition-colors">View on Maps</a>
+                        <div class="flex space-x-4 pt-2">
+                            <a href="#" class="text-gray-400 hover:text-secondary transition-colors">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-secondary transition-colors">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-secondary transition-colors">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">© 2025 Deutsche Welle. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-secondary transition-colors text-sm">Privacy</a>
+                    <a href="#" class="text-gray-400 hover:text-secondary transition-colors text-sm">Terms</a>
+                    <a href="#" class="text-gray-400 hover:text-secondary transition-colors text-sm">Legal</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function () {
+            // Animate timeline elements
+            const timeSlots = document.querySelectorAll('.time-slot');
+            timeSlots.forEach((slot, index) => {
+                slot.style.animationDelay = `${index * 0.1}s`;
+                slot.classList.add('animate-slide-in');
+            });
+
+            // Search functionality
+            const searchInput = document.querySelector('input[type="text"]');
+            searchInput.addEventListener('input', function (e) {
+                const searchTerm = e.target.value.toLowerCase();
+                timeSlots.forEach(slot => {
+                    const content = slot.textContent.toLowerCase();
+                    if (content.includes(searchTerm) || searchTerm === '') {
+                        slot.style.display = 'block';
+                        slot.style.opacity = '1';
+                    } else {
+                        slot.style.opacity = '0.3';
+                    }
+                });
+            });
+
+            // Filter buttons functionality
+            const filterButtons = document.querySelectorAll('.filter-tag');
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    // Toggle active state
+                    this.classList.toggle('bg-white/20');
+                    this.classList.toggle('text-secondary');
+
+                    // Add ripple effect
+                    const ripple = document.createElement('div');
+                    ripple.classList.add('absolute', 'bg-secondary', 'rounded-full', 'opacity-20');
+                    ripple.style.width = ripple.style.height = '100px';
+                    ripple.style.left = ripple.style.top = '50%';
+                    ripple.style.transform = 'translate(-50%, -50%) scale(0)';
+                    ripple.style.animation = 'ripple 0.6s ease-out';
+
+                    this.style.position = 'relative';
+                    this.appendChild(ripple);
+
+                    setTimeout(() => ripple.remove(), 600);
+                });
+            });
+
+            // Day tab switching
+            const dayButtons = document.querySelectorAll('button[class*="active-day"], button[class*="glass-effect"]');
+            dayButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    // Remove active class from all buttons
+                    dayButtons.forEach(btn => {
+                        btn.classList.remove('active-day');
+                        btn.classList.add('glass-effect');
+                    });
+
+                    // Add active class to clicked button
+                    this.classList.remove('glass-effect');
+                    this.classList.add('active-day');
+                });
+            });
+        });
+
+        // Add custom styles for ripple animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: translate(-50%, -50%) scale(1);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+
+</html>
