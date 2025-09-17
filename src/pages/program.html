@@ -126,11 +126,11 @@
             transition: all 0.3s ease;
         }
 
-        .filter-tag {
+        .filter hover:filter-none duration-300-tag {
             transition: all 0.3s ease;
         }
 
-        .filter-tag:hover {
+        .filter hover:filter-none duration-300-tag:hover {
             transform: scale(1.05);
         }
 
@@ -203,7 +203,7 @@
                 </p>
             </div>
 
-            <!-- Search and Filter Section -->
+            <!-- Search and filter hover:filter-none duration-300 Section -->
             <div class="max-w-4xl mx-auto mb-12 animate-slide-up">
                 <div class="glass-effect rounded-2xl p-6 mb-8">
                     <div class="flex flex-col lg:flex-row gap-4 items-center">
@@ -222,37 +222,37 @@
                             Download Schedule
                         </button>
 
-                        <!-- Clear Filter -->
+                        <!-- Clear filter hover:filter-none duration-300 -->
                         <button
                             class="glass-dark px-6 py-3 rounded-xl text-gray-300 font-semibold hover:text-white transition-colors">
                             <i class="fas fa-times mr-2"></i>
-                            Clear Filters
+                            Clear filter hover:filter-none duration-300s
                         </button>
                     </div>
                 </div>
 
-                <!-- Event Type Filters -->
+                <!-- Event Type filter hover:filter-none duration-300s -->
                 <div class="mb-6">
                     <h3 class="text-lg font-semibold text-white mb-4">Event Types</h3>
                     <div class="flex flex-wrap gap-3">
                         <button
-                            class="filter-tag glass-effect px-4 py-2 rounded-full text-sm font-medium text-gray-300 hover:text-white hover:bg-white/20 transition-all">
+                            class="filter hover:filter-none duration-300-tag glass-effect px-4 py-2 rounded-full text-sm font-medium text-gray-300 hover:text-white hover:bg-white/20 transition-all">
                             <i class="fas fa-microphone mr-2"></i>Keynotes
                         </button>
                         <button
-                            class="filter-tag glass-effect px-4 py-2 rounded-full text-sm font-medium text-gray-300 hover:text-white hover:bg-white/20 transition-all">
+                            class="filter hover:filter-none duration-300-tag glass-effect px-4 py-2 rounded-full text-sm font-medium text-gray-300 hover:text-white hover:bg-white/20 transition-all">
                             <i class="fas fa-users mr-2"></i>Panel Discussions
                         </button>
                         <button
-                            class="filter-tag glass-effect px-4 py-2 rounded-full text-sm font-medium text-gray-300 hover:text-white hover:bg-white/20 transition-all">
+                            class="filter hover:filter-none duration-300-tag glass-effect px-4 py-2 rounded-full text-sm font-medium text-gray-300 hover:text-white hover:bg-white/20 transition-all">
                             <i class="fas fa-tools mr-2"></i>Workshops
                         </button>
                         <button
-                            class="filter-tag glass-effect px-4 py-2 rounded-full text-sm font-medium text-gray-300 hover:text-white hover:bg-white/20 transition-all">
+                            class="filter hover:filter-none duration-300-tag glass-effect px-4 py-2 rounded-full text-sm font-medium text-gray-300 hover:text-white hover:bg-white/20 transition-all">
                             <i class="fas fa-network-wired mr-2"></i>Networking
                         </button>
                         <button
-                            class="filter-tag glass-effect px-4 py-2 rounded-full text-sm font-medium text-gray-300 hover:text-white hover:bg-white/20 transition-all">
+                            class="filter hover:filter-none duration-300-tag glass-effect px-4 py-2 rounded-full text-sm font-medium text-gray-300 hover:text-white hover:bg-white/20 transition-all">
                             <i class="fas fa-utensils mr-2"></i>Social Events
                         </button>
                     </div>
@@ -612,8 +612,8 @@
                 });
             });
 
-            // Filter buttons functionality
-            const filterButtons = document.querySelectorAll('.filter-tag');
+            // filter hover:filter-none duration-300 buttons functionality
+            const filterButtons = document.querySelectorAll('.filter hover:filter-none duration-300-tag');
             filterButtons.forEach(button => {
                 button.addEventListener('click', function () {
                     // Toggle active state
