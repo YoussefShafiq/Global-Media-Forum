@@ -137,6 +137,37 @@
         </div>
     </section>
 
+    <!-- Countdown Section -->
+    <section class="py-20 bg-gradient-to-r from-gray-900 via-dark to-gray-900 relative">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-10">
+                <span class="text-gradient">Countdown</span> <span class="text-white">to CMF 2025</span>
+            </h2>
+            <p class="text-gray-400 text-lg mb-12">We’re counting down the days until we meet in Bonn, Germany</p>
+
+            <!-- Timer -->
+            <div id="countdown" class="flex justify-center gap-6 flex-wrap">
+                <div class="glass-effect rounded-2xl px-8 py-6 neon-border text-center">
+                    <div id="days" class="text-5xl font-bold text-secondary">00</div>
+                    <div class="text-gray-300 text-sm mt-2">Days</div>
+                </div>
+                <div class="glass-effect rounded-2xl px-8 py-6 neon-border text-center">
+                    <div id="hours" class="text-5xl font-bold text-secondary">00</div>
+                    <div class="text-gray-300 text-sm mt-2">Hours</div>
+                </div>
+                <div class="glass-effect rounded-2xl px-8 py-6 neon-border text-center">
+                    <div id="minutes" class="text-5xl font-bold text-secondary">00</div>
+                    <div class="text-gray-300 text-sm mt-2">Minutes</div>
+                </div>
+                <div class="glass-effect rounded-2xl px-8 py-6 neon-border text-center">
+                    <div id="seconds" class="text-5xl font-bold text-secondary">00</div>
+                    <div class="text-gray-300 text-sm mt-2">Seconds</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
     <!-- Features Section -->
     <section class="py-20 relative">
         <div class="max-w-7xl mx-auto px-6">
@@ -475,6 +506,35 @@
                 this.style.transform = 'translateY(0) scale(1)';
             });
         });
+
+        // Set the event date (Year, Month (0-11), Day, Hour, Minute)
+        const eventDate = new Date("September 21, 2025 09:00:00").getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+
+            if (distance <= 0) {
+                document.getElementById("countdown").innerHTML =
+                    "<p class='text-2xl font-bold text-secondary'>The event has started!</p>";
+                clearInterval(interval);
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").textContent = days.toString().padStart(2, "0");
+            document.getElementById("hours").textContent = hours.toString().padStart(2, "0");
+            document.getElementById("minutes").textContent = minutes.toString().padStart(2, "0");
+            document.getElementById("seconds").textContent = seconds.toString().padStart(2, "0");
+        }
+
+        // Update every second
+        const interval = setInterval(updateCountdown, 1000);
+        updateCountdown();
     </script>
 </body>
 
