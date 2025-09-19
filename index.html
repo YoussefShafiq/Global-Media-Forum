@@ -57,18 +57,40 @@
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-8 site-menu">
                     <a href=""
-                        class="text-gray-300 hover:text-secondary transition-colors duration-300 flex items-center space-x-2">
+                        class="text-secondary transition-colors duration-300 flex items-center space-x-2">
                         <i class="fas fa-home"></i>
                         <span>Home</span>
                     </a>
-                    <a href="./src/pages/speakers.html"
-                        class="text-gray-300 hover:text-secondary transition-colors duration-300">Speakers</a>
+                    <!-- Speakers with hover years -->
+                    <div class="relative group">
+                        <a href="./src/pages/speakers.html"
+                            class="text-gray-300 hover:text-secondary transition-colors duration-300 flex items-center">
+                            <span>Speakers</span>
+                            <i class="fas fa-chevron-down ml-1 text-xs opacity-70 transition-transform duration-200 group-hover:rotate-180"></i>
+                        </a>
+                        <div class="absolute left-0 top-full hidden group-hover:flex flex-col min-w-[160px] glass-effect rounded-xl p-2 z-50">
+                            <a href="./src/pages/speakers.html?year=2022" class="px-4 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/10">Speakers 2022</a>
+                            <a href="./src/pages/speakers.html?year=2023" class="px-4 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/10">Speakers 2023</a>
+                        </div>
+                    </div>
                     <a href="./src/pages/program.html"
                         class="text-gray-300 hover:text-secondary transition-colors duration-300">Program</a>
-                    <a href="./src/pages/gallery.html"
-                        class="text-gray-300 hover:text-secondary transition-colors duration-300">Gallery</a>
+                    <!-- Gallery with hover years -->
+                    <div class="relative group">
+                        <a href="./src/pages/gallery.html"
+                            class="text-gray-300 hover:text-secondary transition-colors duration-300 flex items-center">
+                            <span>Gallery</span>
+                            <i class="fas fa-chevron-down ml-1 text-xs opacity-70 transition-transform duration-200 group-hover:rotate-180"></i>
+                        </a>
+                        <div class="absolute left-0 top-full hidden group-hover:flex flex-col min-w-[160px] glass-effect rounded-xl p-2 z-50">
+                            <a href="./src/pages/gallery.html?year=2022" class="px-4 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/10">Gallery 2022</a>
+                            <a href="./src/pages/gallery.html?year=2023" class="px-4 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/10">Gallery 2023</a>
+                        </div>
+                    </div>
                     <a href="./src/pages/news.html"
                         class="text-gray-300 hover:text-secondary transition-colors duration-300">News</a>
+                    <a href="./src/pages/who-we-are.html"
+                        class="text-gray-300 hover:text-secondary transition-colors duration-300">Who We Are</a>
                 </div>
 
                 <!-- CTA Button -->
@@ -1365,6 +1387,65 @@
                     <div class="swiper-button-prev news-nav-prev text-secondary !-left-20"></div>
                     <!-- Pagination -->
                     <div class="swiper-pagination news-pagination !bottom-0"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gradient-to-r from-gray-900 via-dark to-gray-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                        <span class="text-gradient">Contact</span>
+                    </h2>
+                    <p class="text-gray-400 mb-8 max-w-xl">Tell us how we can help. Choose a topic and send your message to the EMF team.</p>
+
+                    <form class="space-y-6">
+                        <!-- Topics -->
+                        <div class="flex flex-wrap gap-6 text-sm text-gray-300">
+                            <label class="inline-flex items-center gap-2 cursor-pointer">
+                                <input type="radio" name="topic" value="sponsors" class="accent-secondary" checked />
+                                <span>Join Our Sponsors</span>
+                            </label>
+                            <label class="inline-flex items-center gap-2 cursor-pointer">
+                                <input type="radio" name="topic" value="speak" class="accent-secondary" />
+                                <span>Speak At The Forum</span>
+                            </label>
+                            <label class="inline-flex items-center gap-2 cursor-pointer">
+                                <input type="radio" name="topic" value="team" class="accent-secondary" />
+                                <span>Communicate with EMF Team</span>
+                            </label>
+                            <label class="inline-flex items-center gap-2 cursor-pointer">
+                                <input type="radio" name="topic" value="media" class="accent-secondary" />
+                                <span>Registration for Media coverage</span>
+                            </label>
+                        </div>
+
+                        <!-- Inputs -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <input type="text" placeholder="Name" class="w-full glass-dark px-4 py-3 rounded-full text-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-secondary/50" />
+                            <input type="email" placeholder="Enter your email" class="w-full glass-dark px-4 py-3 rounded-full text-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-secondary/50" />
+                        </div>
+                        <textarea rows="5" placeholder="Message *" class="w-full glass-dark px-4 py-3 rounded-2xl text-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-secondary/50"></textarea>
+
+                        <button type="button" class="inline-flex items-center gap-2 bg-gradient-to-r from-secondary to-primary px-6 py-3 rounded-full text-white font-semibold hover:shadow-lg hover:shadow-secondary/25 transition-all duration-300">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Decorative or contact info card -->
+                <div class="glass-effect rounded-2xl p-8">
+                    <h3 class="text-2xl font-bold mb-4">Stay Connected</h3>
+                    <p class="text-gray-400 mb-6">Follow us for announcements and opportunities, or email us directly for partnership inquiries.</p>
+                    <div class="space-y-3 text-gray-300">
+                        <div class="flex items-center gap-3"><i class="fas fa-envelope text-secondary"></i> contact@egymediaforum.com</div>
+                        <div class="flex items-center gap-3"><i class="fas fa-phone text-secondary"></i> +20 (0)123 456 789</div>
+                        <div class="flex items-center gap-3"><i class="fas fa-location-dot text-secondary"></i> Cairo, Egypt</div>
+                    </div>
                 </div>
             </div>
         </div>

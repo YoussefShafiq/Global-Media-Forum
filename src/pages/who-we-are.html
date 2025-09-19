@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Who We Are • Egypt Media Forum</title>
+    <link rel="stylesheet" href="../../main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0066ff',
+                        secondary: '#00d4ff',
+                        accent: '#ff3366',
+                        dark: '#0a0b14',
+                        'gray-900': '#111827'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif']
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.8s ease-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'slide-in': 'slideIn 0.5s ease-out',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'float': 'float 3s ease-in-out infinite'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-dark text-gray-100">
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-effect">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20 site-nav">
+                <!-- Logo -->
+                <div class="flex items-center space-x-4">
+                    <img src="https://registration.egymediaforum.com/img/logo-t.png" alt="EMF logo"
+                        class="h-14 site-logo">
+                    <div class=" hidden md:block">
+                        <h1 class="text-xl font-bold text-white brand-title">Egypt Media Forum</h1>
+                        <p class="text-sm text-gray-300 brand-subtitle">2025 • Cairo, egypt</p>
+                    </div>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8 site-menu">
+                    <a href="../../index.html"
+                        class="text-gray-300 hover:text-secondary transition-colors duration-300 flex items-center space-x-2">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    <!-- Speakers with hover years -->
+                    <div class="relative group">
+                        <a href="./speakers.html"
+                            class="text-gray-300 hover:text-secondary transition-colors duration-300 flex items-center">
+                            <span>Speakers</span>
+                            <i
+                                class="fas fa-chevron-down ml-1 text-xs opacity-70 transition-transform duration-200 group-hover:rotate-180"></i>
+                        </a>
+                        <div
+                            class="absolute left-0 top-full hidden group-hover:flex flex-col min-w-[160px] glass-effect rounded-xl p-2 z-50">
+                            <a href="./speakers.html?year=2022"
+                                class="px-4 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/10">Speakers
+                                2022</a>
+                            <a href="./speakers.html?year=2023"
+                                class="px-4 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/10">Speakers
+                                2023</a>
+                        </div>
+                    </div>
+                    <a href="./program.html"
+                        class="text-gray-300 hover:text-secondary transition-colors duration-300">Program</a>
+                    <!-- Gallery with hover years -->
+                    <div class="relative group">
+                        <a href="./gallery.html"
+                            class="text-gray-300 hover:text-secondary transition-colors duration-300 flex items-center">
+                            <span>Gallery</span>
+                            <i
+                                class="fas fa-chevron-down ml-1 text-xs opacity-70 transition-transform duration-200 group-hover:rotate-180"></i>
+                        </a>
+                        <div
+                            class="absolute left-0 top-full hidden group-hover:flex flex-col min-w-[160px] glass-effect rounded-xl p-2 z-50">
+                            <a href="./gallery.html?year=2022"
+                                class="px-4 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/10">Gallery
+                                2022</a>
+                            <a href="./gallery.html?year=2023"
+                                class="px-4 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/10">Gallery
+                                2023</a>
+                        </div>
+                    </div>
+                    <a href="./news.html"
+                        class="text-gray-300 hover:text-secondary transition-colors duration-300">News</a>
+                    <a href="./who-we-are.html" class="text-secondary font-semibold transition-colors duration-300">Who
+                        We Are</a>
+                </div>
+                <!-- CTA Button -->
+                <button
+                    class="bg-gradient-to-r from-secondary to-primary px-6 py-3 rounded-full text-white font-semibold hover:shadow-lg hover:shadow-secondary/25 transition-all duration-300 transform hover:scale-105">
+                    Register Now
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-28">
+        <!-- Hero / Title -->
+        <section class="py-10">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="text-4xl md:text-5xl font-extrabold mb-6"><span class="text-gradient">Who We Are?</span></h2>
+                <p class="text-gray-300 max-w-3xl">The Egypt Media Forum (EMF) is an annual and independent
+                    international platform for media development based in Cairo. We advance know-how, policy, and
+                    capacity building, and facilitate professional exchange throughout Egypt and the MENA region.</p>
+            </div>
+        </section>
+
+        <!-- Video (YouTube iframe) -->
+        <section class="py-4">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="relative w-full overflow-hidden rounded-2xl shadow-xl glass-effect">
+                    <!-- 16:9 aspect ratio -->
+                    <div class="pt-[56.25%]"></div>
+                    <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/jd0Fbkda41Y"
+                        title="EMF Overview" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Overview Text -->
+        <section class="py-10">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="prose prose-invert max-w-none">
+                    <p class="text-gray-300 leading-relaxed">We work on developing the media work environment in Egypt
+                        and the MENA region. The Forum runs throughout the year as an international platform for
+                        development in the form of sustainable products that aim to develop media tools. These include a
+                        press training unit and a digital platform providing advanced knowledge and utilizing in-depth
+                        studies.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission & Vision -->
+        <section class="py-6">
+            <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="glass-effect rounded-2xl p-8">
+                    <h3 class="text-2xl font-bold mb-3">Mission</h3>
+                    <p class="text-gray-300">EMF is creating an annual hub for Egyptian media and its international
+                        counterparts, focusing on diversity and new content trends. We invite elite trainers and
+                        speakers from around the world to participate in innovative presentations, roundtables, and
+                        workshops to discuss the latest trends in the media industry.</p>
+                </div>
+                <div class="glass-effect rounded-2xl p-8">
+                    <h3 class="text-2xl font-bold mb-3">Vision</h3>
+                    <p class="text-gray-300">We believe in development built on achievements—not by ignoring them. Media
+                        is an effective tool for supporting development. EMF aims to use the media as a community
+                        development tool and to enable knowledge transfer, policy development, and professional exchange
+                        across the region.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (simplified) -->
+    <footer class="bg-dark border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Brand -->
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 rounded-xl flex items-center justify-center">
+                            <img src="https://egymediaforum.com/assets/front_asset/img/mainAnimation/Sympol-xl.png"
+                                alt="EMF logo">
+                        </div>
+                        <span class="text-xl font-bold text-white">EMF</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                        Connecting media professionals worldwide through meaningful dialogue and innovation.
+                    </p>
+                </div>
+
+                <!-- About -->
+                <div>
+                    <h4 class="font-semibold text-white mb-4">About</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-secondary transition-colors">Who We Are</a></li>
+                        <li><a href="#" class="hover:text-secondary transition-colors">Press Kit</a></li>
+                        <li><a href="#" class="hover:text-secondary transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Event -->
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Event</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-secondary transition-colors">Newsletter</a></li>
+                        <li><a href="#" class="hover:text-secondary transition-colors">FAQ</a></li>
+                        <li><a href="#" class="hover:text-secondary transition-colors">Accessibility</a></li>
+                    </ul>
+                </div>
+
+                <!-- Location -->
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Location</h4>
+                    <div class="text-gray-400 text-sm space-y-2">
+                        <p>Cairo, egypt</p>
+                        <a href="#" class="block hover:text-secondary transition-colors">View on Maps</a>
+                        <div class="flex space-x-4 pt-2">
+                            <a href="#" class="text-gray-400 hover:text-secondary transition-colors">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-secondary transition-colors">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-secondary transition-colors">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">© 2025 Deutsche Welle. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-secondary transition-colors text-sm">Privacy</a>
+                    <a href="#" class="text-gray-400 hover:text-secondary transition-colors text-sm">Terms</a>
+                    <a href="#" class="text-gray-400 hover:text-secondary transition-colors text-sm">Legal</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

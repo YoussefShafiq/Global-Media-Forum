@@ -59,11 +59,32 @@
             <i class="fas fa-home"></i>
             <span>Home</span>
           </a>
-          <a href="./speakers.html"
-            class="text-gray-300 hover:text-secondary transition-colors duration-300">Speakers</a>
+          <!-- Speakers with hover years -->
+          <div class="relative group">
+            <a href="./speakers.html"
+              class="text-gray-300 hover:text-secondary transition-colors duration-300 flex items-center">
+              <span>Speakers</span>
+              <i class="fas fa-chevron-down ml-1 text-xs opacity-70 transition-transform duration-200 group-hover:rotate-180"></i>
+            </a>
+            <div class="absolute left-0 top-full hidden group-hover:flex flex-col min-w-[160px] glass-effect rounded-xl p-2 z-50">
+              <a href="./speakers.html?year=2022" class="px-4 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/10">Speakers 2022</a>
+              <a href="./speakers.html?year=2023" class="px-4 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/10">Speakers 2023</a>
+            </div>
+          </div>
           <a href="./program.html" class="text-gray-300 hover:text-secondary transition-colors duration-300">Program</a>
-          <a href="./gallery.html" class="text-secondary font-semibold transition-colors duration-300">Gallery</a>
+          <!-- Gallery with hover years -->
+          <div class="relative group">
+            <a href="./gallery.html" class="text-secondary font-semibold transition-colors duration-300 flex items-center">
+              <span>Gallery</span>
+              <i class="fas fa-chevron-down ml-1 text-xs opacity-70 transition-transform duration-200 group-hover:rotate-180"></i>
+            </a>
+            <div class="absolute left-0 top-full hidden group-hover:flex flex-col min-w-[160px] glass-effect rounded-xl p-2 z-50">
+              <a href="./gallery.html?year=2022" class="px-4 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/10">Gallery 2022</a>
+              <a href="./gallery.html?year=2023" class="px-4 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/10">Gallery 2023</a>
+            </div>
+          </div>
           <a href="./news.html" class="text-gray-300 hover:text-secondary transition-colors duration-300">News</a>
+          <a href="./who-we-are.html" class="text-gray-300 hover:text-secondary transition-colors duration-300">Who We Are</a>
         </div>
         <!-- CTA Button -->
         <button
