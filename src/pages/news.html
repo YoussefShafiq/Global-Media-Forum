@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EMF 2025 | News</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/png"
+        href="https://egymediaforum.com/assets/front_asset/img/mainAnimation/Sympol-xl.png" />
+    <link rel="stylesheet" href="../../main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0066ff',
+                        secondary: '#00d4ff',
+                        accent: '#ff3366',
+                        dark: '#0a0b14',
+                        'gray-900': '#111827'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif']
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.8s ease-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'slide-in': 'slideIn 0.5s ease-out',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'float': 'float 3s ease-in-out infinite'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-dark text-white font-sans min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-effect">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20 site-nav">
+                <!-- Logo -->
+                <div class="flex items-center space-x-4">
+                    <img src="https://registration.egymediaforum.com/img/logo-t.png" alt="EMF logo" class="h-14 site-logo" />
+                    <div class="hidden md:block">
+                        <h1 class="text-xl font-bold text-white brand-title">Egypt Media Forum</h1>
+                        <p class="text-sm text-gray-300 brand-subtitle">2025 • Cairo, egypt</p>
+                    </div>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8 site-menu">
+                    <a href="../../index.html"
+                        class="text-gray-300 hover:text-secondary transition-colors duration-300 flex items-center space-x-2">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    <a href="./speakers.html"
+                        class="text-gray-300 hover:text-secondary transition-colors duration-300">Speakers</a>
+                    <a href="./program.html"
+                        class="text-gray-300 hover:text-secondary transition-colors duration-300">Program</a>
+                    <a href="./gallery.html"
+                        class="text-gray-300 hover:text-secondary transition-colors duration-300">Gallery</a>
+                    <a href="./news.html" class="text-secondary font-semibold transition-colors duration-300">News</a>
+                </div>
+                <!-- CTA Button -->
+                <button
+                    class="bg-gradient-to-r from-secondary to-primary px-6 py-3 rounded-full text-white font-semibold hover:shadow-lg hover:shadow-secondary/25 transition-all duration-300 transform hover:scale-105">
+                    Register Now
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="">
+        <!-- Header -->
+        <section class="py-14 pt-32 bg-gradient-to-r from-gray-900 via-dark to-gray-900 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl animate-float"></div>
+            <div class="absolute bottom-0 left-0 w-96 h-96 bg-cyan-400/10 rounded-full blur-3xl animate-float"
+                style="animation-delay: -1.2s;"></div>
+            <div class="max-w-7xl mx-auto px-6 relative z-10">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                    <span class="text-gradient">Latest</span> <span class="text-white">News</span>
+                </h2>
+                <p class="text-gray-400 max-w-2xl">Stay up to date with announcements, speakers, program updates, and
+                    more from EMF 2025.</p>
+            </div>
+        </section>
+
+        <!-- Featured Article -->
+        <section class="py-12 bg-gradient-to-r from-gray-900 via-dark to-gray-900">
+            <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+                <div class="relative overflow-hidden rounded-2xl glass-effect">
+                    <img src="https://images.unsplash.com/photo-1522199710521-72d69614c702?w=1200&q=80" alt="Featured"
+                        class="w-full h-80 object-cover" />
+                    <div class="absolute top-4 left-4">
+                        <span
+                            class="bg-secondary/90 text-dark px-3 py-1 rounded-full text-xs font-semibold">Announcement</span>
+                    </div>
+                </div>
+                <div class="flex flex-col justify-center">
+                    <h3 class="text-3xl font-bold mb-3">Registration Opens Next Week</h3>
+                    <p class="text-gray-400 mb-4">Secure your spot for EMF 2025 as registration officially opens. Early
+                        bird tickets available with limited quantities for premium add-ons.</p>
+                    <div class="flex items-center text-sm text-gray-400 mb-6">
+                        <i class="far fa-calendar mr-2"></i> Sep 10, 2025
+                    </div>
+                    <div>
+                        <a href="#"
+                            class="inline-block bg-gradient-to-r from-secondary to-primary px-6 py-3 rounded-full text-white font-semibold hover:shadow-lg hover:shadow-secondary/25 transition-all">Read
+                            full update</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- News List/Grid -->
+        <section class="py-8 bg-gradient-to-r from-gray-900 via-dark to-gray-900">
+            <div class="max-w-7xl mx-auto px-6">
+                <!-- Filters -->
+                <div class="flex flex-wrap gap-3 mb-8">
+                    <button
+                        class="news-filter active glass-dark px-5 py-2.5 rounded-full text-xs uppercase tracking-wide font-semibold text-white"
+                        data-filter="all">All</button>
+                    <button
+                        class="news-filter glass-dark px-5 py-2.5 rounded-full text-xs uppercase tracking-wide font-semibold text-gray-300 hover:text-white"
+                        data-filter="announcement">Announcement</button>
+                    <button
+                        class="news-filter glass-dark px-5 py-2.5 rounded-full text-xs uppercase tracking-wide font-semibold text-gray-300 hover:text-white"
+                        data-filter="speakers">Speakers</button>
+                    <button
+                        class="news-filter glass-dark px-5 py-2.5 rounded-full text-xs uppercase tracking-wide font-semibold text-gray-300 hover:text-white"
+                        data-filter="program">Program</button>
+                </div>
+
+                <div id="news-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Article Card -->
+                    <article class="news-item glass-effect rounded-2xl overflow-hidden flex flex-col"
+                        data-category="announcement">
+                        <div class="relative h-44">
+                            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=900&q=80"
+                                class="w-full h-full object-cover" alt="Article" />
+                            <div class="absolute top-4 left-4"><span
+                                    class="bg-secondary/90 text-dark px-3 py-1 rounded-full text-xs font-semibold">Announcement</span>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col">
+                            <h4 class="text-lg font-bold mb-2">Workshop Tracks Revealed</h4>
+                            <p class="text-gray-400 text-sm mb-4">Explore hands-on sessions covering AI, investigative
+                                journalism, and digital storytelling.</p>
+                            <div class="mt-auto flex items-center justify-between text-sm text-gray-400">
+                                <span><i class="far fa-calendar mr-2"></i>Sep 15, 2025</span>
+                                <a href="#" class="text-secondary hover:text-primary font-semibold">Read more <i
+                                        class="fas fa-arrow-right ml-1"></i></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="news-item glass-effect rounded-2xl overflow-hidden flex flex-col"
+                        data-category="speakers">
+                        <div class="relative h-44">
+                            <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=900&q=80"
+                                class="w-full h-full object-cover" alt="Article" />
+                            <div class="absolute top-4 left-4"><span
+                                    class="bg-accent/90 text-white px-3 py-1 rounded-full text-xs font-semibold">Speakers</span>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col">
+                            <h4 class="text-lg font-bold mb-2">First Keynote Speaker Announced</h4>
+                            <p class="text-gray-400 text-sm mb-4">We’re excited to welcome a global leader in media
+                                innovation to our keynote stage.</p>
+                            <div class="mt-auto flex items-center justify-between text-sm text-gray-400">
+                                <span><i class="far fa-calendar mr-2"></i>Sep 12, 2025</span>
+                                <a href="#" class="text-secondary hover:text-primary font-semibold">Read more <i
+                                        class="fas fa-arrow-right ml-1"></i></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="news-item glass-effect rounded-2xl overflow-hidden flex flex-col"
+                        data-category="program">
+                        <div class="relative h-44">
+                            <img src="https://images.unsplash.com/photo-1522199755839-a2bacb67c546?w=900&q=80"
+                                class="w-full h-full object-cover" alt="Article" />
+                            <div class="absolute top-4 left-4"><span
+                                    class="bg-purple-500/90 text-white px-3 py-1 rounded-full text-xs font-semibold">Program</span>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col">
+                            <h4 class="text-lg font-bold mb-2">Agenda Sneak Peek</h4>
+                            <p class="text-gray-400 text-sm mb-4">Discover the thematic pillars and session formats
+                                we’re planning this year.</p>
+                            <div class="mt-auto flex items-center justify-between text-sm text-gray-400">
+                                <span><i class="far fa-calendar mr-2"></i>Sep 18, 2025</span>
+                                <a href="#" class="text-secondary hover:text-primary font-semibold">Read more <i
+                                        class="fas fa-arrow-right ml-1"></i></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- More sample articles -->
+                    <article class="news-item glass-effect rounded-2xl overflow-hidden flex flex-col"
+                        data-category="speakers">
+                        <div class="relative h-44">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=900&q=80"
+                                class="w-full h-full object-cover" alt="Article" />
+                            <div class="absolute top-4 left-4"><span
+                                    class="bg-accent/90 text-white px-3 py-1 rounded-full text-xs font-semibold">Speakers</span>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col">
+                            <h4 class="text-lg font-bold mb-2">Panel Hosts Confirmed</h4>
+                            <p class="text-gray-400 text-sm mb-4">Meet the moderators who will guide our most
+                                anticipated discussions.</p>
+                            <div class="mt-auto flex items-center justify-between text-sm text-gray-400">
+                                <span><i class="far fa-calendar mr-2"></i>Sep 20, 2025</span>
+                                <a href="#" class="text-secondary hover:text-primary font-semibold">Read more <i
+                                        class="fas fa-arrow-right ml-1"></i></a>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 rounded-xl flex items-center justify-center">
+                            <img src="https://egymediaforum.com/assets/front_asset/img/mainAnimation/Sympol-xl.png"
+                                alt="EMF logo" />
+                        </div>
+                        <span class="text-xl font-bold text-white">EMF</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">Connecting media professionals worldwide through meaningful
+                        dialogue and innovation.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white mb-4">About</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-secondary transition-colors">Who We Are</a></li>
+                        <li><a href="#" class="hover:text-secondary transition-colors">Press Kit</a></li>
+                        <li><a href="#" class="hover:text-secondary transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Event</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-secondary transition-colors">Newsletter</a></li>
+                        <li><a href="#" class="hover:text-secondary transition-colors">FAQ</a></li>
+                        <li><a href="#" class="hover:text-secondary transition-colors">Accessibility</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Location</h4>
+                    <div class="text-gray-400 text-sm space-y-2">
+                        <p>Cairo, egypt</p>
+                        <a href="#" class="block hover:text-secondary transition-colors">View on Maps</a>
+                        <div class="flex space-x-4 pt-2">
+                            <a href="#" class="text-gray-400 hover:text-secondary transition-colors"><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-secondary transition-colors"><i
+                                    class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-secondary transition-colors"><i
+                                    class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">© 2025 Deutsche Welle. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-secondary transition-colors text-sm">Privacy</a>
+                    <a href="#" class="text-gray-400 hover:text-secondary transition-colors text-sm">Terms</a>
+                    <a href="#" class="text-gray-400 hover:text-secondary transition-colors text-sm">Legal</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple filter for news page
+        document.addEventListener('DOMContentLoaded', function () {
+            const buttons = document.querySelectorAll('.news-filter');
+            const cards = document.querySelectorAll('.news-item');
+
+            buttons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    buttons.forEach(b => b.classList.remove('active', 'text-white'));
+                    buttons.forEach(b => b.classList.add('text-gray-300'));
+                    btn.classList.add('active', 'text-white');
+                    btn.classList.remove('text-gray-300');
+
+                    const filter = btn.getAttribute('data-filter');
+                    cards.forEach(card => {
+                        const cat = card.getAttribute('data-category');
+                        const show = filter === 'all' || filter === cat;
+                        card.classList.toggle('hidden', !show);
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

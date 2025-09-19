@@ -1,141 +1,174 @@
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
 
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
 
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-        @keyframes float {
+@keyframes float {
 
-            0%,
-            100% {
-                transform: translateY(0px);
-            }
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
 
-            50% {
-                transform: translateY(-10px);
-            }
-        }
+    50% {
+        transform: translateY(-10px);
+    }
+}
 
-        @keyframes glow {
-            from {
-                box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
-            }
+@keyframes glow {
+    from {
+        box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+    }
 
-            to {
-                box-shadow: 0 0 30px rgba(0, 212, 255, 0.8);
-            }
-        }
+    to {
+        box-shadow: 0 0 30px rgba(0, 212, 255, 0.8);
+    }
+}
 
-        .gradient-bg {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
+.gradient-bg {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
 
-        .hero-gradient {
-            background: linear-gradient(135deg, rgba(10, 11, 20, 0.8) 0%, rgba(102, 126, 234, 0.4) 100%);
-        }
+.hero-gradient {
+    background: linear-gradient(135deg, rgba(10, 11, 20, 0.8) 0%, rgba(102, 126, 234, 0.4) 100%);
+}
 
-        .glass-effect {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .neon-border {
-            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
-            border: 1px solid rgba(0, 212, 255, 0.5);
-        }
-
-        .text-gradient {
-            background: linear-gradient(135deg, #00d4ff, #0066ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .card-hover {
-            transition: all 0.3s ease;
-        }
-
-        .card-hover:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-        }
+.glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
 
 
+.neon-border {
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+    border: 1px solid rgba(0, 212, 255, 0.5);
+}
 
-        .glass-effect {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
+.text-gradient {
+    background: linear-gradient(135deg, #00d4ff, #0066ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
 
-        .glass-dark {
-            background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
+.card-hover {
+    transition: all 0.3s ease;
+}
 
-        .neon-border {
-            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
-            border: 1px solid rgba(0, 212, 255, 0.5);
-        }
+.card-hover:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
 
-        .text-gradient {
-            background: linear-gradient(135deg, #00d4ff, #0066ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
 
-        .speaker-card {
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
 
-        .speaker-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
-        }
+.glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
 
-        .speaker-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
-            transition: left 0.5s;
-        }
+.glass-dark {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
 
-        .speaker-card:hover::before {
-            left: 100%;
-        }
+.neon-border {
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+    border: 1px solid rgba(0, 212, 255, 0.5);
+}
 
-        .category-filter {
-            transition: all 0.3s ease;
-        }
+.text-gradient {
+    background: linear-gradient(135deg, #00d4ff, #0066ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
 
-        .category-filter.active {
-            background: linear-gradient(135deg, #0066ff, #00d4ff);
-            transform: scale(1.05);
-        }
+.speaker-card {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.speaker-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
+}
+
+.speaker-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+.speaker-card:hover::before {
+    left: 100%;
+}
+
+.category-filter {
+    transition: all 0.3s ease;
+}
+
+.category-filter.active {
+    background: linear-gradient(135deg, #0066ff, #00d4ff);
+    transform: scale(1.05);
+}
+
+/* Shared Navbar Styles */
+.site-nav {
+    height: 5rem;
+    /* 80px consistent height */
+}
+
+.site-nav .site-logo {
+    height: 3.5rem;
+    /* 56px logo height */
+    width: auto;
+}
+
+.site-nav .brand-title {
+    font-size: 1.25rem;
+    /* text-xl */
+    line-height: 1.75rem;
+    font-weight: 700;
+}
+
+.site-nav .brand-subtitle {
+    font-size: 0.875rem;
+    /* text-sm */
+    line-height: 1.25rem;
+    color: #D1D5DB;
+    /* tailwind gray-300 */
+}
+
+.site-menu a {
+    font-size: 1rem;
+    /* text-base */
+}
