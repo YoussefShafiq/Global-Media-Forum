@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login • EMF</title>
+  <link rel="stylesheet" href="../../main.css" />
+  <link rel='icon' type='image/png' href='https://egymediaforum.com/assets/front_asset/img/mainAnimation/Sympol-xl.png'>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0066ff',
+            secondary: '#00d4ff',
+            accent: '#ff3366',
+            dark: '#0a0b14',
+            'gray-900': '#111827'
+          },
+          fontFamily: {
+            'sans': ['Inter', 'system-ui', 'sans-serif']
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.8s ease-out',
+            'slide-up': 'slideUp 0.6s ease-out',
+            'slide-in': 'slideIn 0.5s ease-out',
+            'glow': 'glow 2s ease-in-out infinite alternate'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-dark text-gray-100">
+  <!-- Simple Navbar -->
+  <nav class="fixed top-0 left-0 right-0 z-50 glass-effect">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <div class="flex items-center space-x-4">
+          <img src="https://registration.egymediaforum.com/img/logo-t.png" alt="GMF logo" class="h-14 site-logo">
+          <div class=" hidden md:block">
+            <h1 class="text-xl font-bold text-white brand-title">Egypt Media Forum</h1>
+            <p class="text-sm text-gray-300 brand-subtitle">2025 • Cairo, egypt</p>
+          </div>
+        </div>
+        <div class="hidden md:flex items-center gap-4">
+          <a class="text-gray-300 hover:text-secondary" href="./register.html">Register Event</a>
+          <a class="text-secondary" href="./login.html">Login</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="pt-28 overflow-hidden relative">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-secondary/10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <!-- Info Panel -->
+      <section class="lg:col-span-2 glass-effect rounded-2xl p-8">
+        <h2 class="text-2xl font-bold mb-4">Forum Languages</h2>
+        <p class="text-gray-300 mb-6 text-sm">The primary language of the forum is Arabic, with English also used.
+          Translation services between Arabic and English are available for most forum activities.</p>
+        <h3 class="text-xl font-bold mb-3">Attendance Requirements</h3>
+        <p class="text-gray-300 mb-6 text-sm">Participation in forum activities requires prior registration and payment
+          of applicable fees, which vary by category. Participation is subject to availability.</p>
+        <h3 class="text-xl font-bold mb-3">Categories and Fees</h3>
+        <div class="space-y-6 text-sm">
+          <div>
+            <h4 class="font-semibold text-white mb-2">Category A</h4>
+            <ul class="list-disc pl-6 text-gray-300 space-y-1">
+              <li>Egyptian journalists and media professionals.</li>
+              <li>Egyptian media and journalism researchers and academics.</li>
+              <li>Journalists and media professionals working for Egyptian media outlets of all nationalities.</li>
+              <li>Official spokespersons and media advisors for Egyptian ministries and public sector entities.</li>
+              <li>Journalism and media undergraduate students of all nationalities.</li>
+            </ul>
+            <p class="mt-2 text-secondary font-semibold">Registration Fee: Exempt</p>
+          </div>
+          <hr class="border-gray-700" />
+          <div>
+            <h4 class="font-semibold text-white mb-2">Category B</h4>
+            <ul class="list-disc pl-6 text-gray-300 space-y-1">
+              <li>Non-Egyptian journalists and media professionals.</li>
+              <li>Non-Egyptian media and journalism researchers and academics.</li>
+              <li>Non-Egyptian official spokespersons and media advisors for public institutions.</li>
+            </ul>
+            <p class="mt-2 text-secondary font-semibold">Registration Fee: $250</p>
+            <p class="mt-2 text-gray-400 text-xs">Fees cover access to all forum activities and coffee/lunch breaks on
+              both days. Additional costs are not included. Payment is due after registration and upon receipt of
+              acceptance confirmation via email.</p>
+          </div>
+          <hr class="border-gray-700" />
+          <div>
+            <h4 class="font-semibold text-white mb-2">Category C</h4>
+            <ul class="list-disc pl-6 text-gray-300 space-y-1">
+              <li>Egyptian and non-Egyptian corporate communicators, public relations, and related professionals in
+                private companies, agencies, and institutions.</li>
+              <li>Egyptian and non-Egyptian marketing and advertising professionals.</li>
+            </ul>
+            <p class="mt-2 text-secondary font-semibold">Registration Fee: $500</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Login Card -->
+      <section class="glass-effect rounded-2xl p-8">
+        <h2 class="text-2xl font-bold mb-2">Login</h2>
+        <p class="text-gray-400 text-sm mb-6">Please enter the required information</p>
+        <form id="login-form" class="space-y-4">
+          <div>
+            <label class="block text-sm mb-1">Email</label>
+            <input type="email" id="login-email" class="w-full glass-dark px-4 py-3 rounded-xl"
+              placeholder="your@email.com" required />
+          </div>
+          <div>
+            <label class="block text-sm mb-1">Password</label>
+            <input type="password" id="login-password" class="w-full glass-dark px-4 py-3 rounded-xl"
+              placeholder="••••••••" required />
+          </div>
+          <button class="w-full bg-gradient-to-r from-secondary to-primary py-3 rounded-xl font-semibold">Login</button>
+          <p class="text-center text-sm text-gray-400">Don't have an account? <a class="text-secondary"
+              href="./register.html">Sign Up</a></p>
+        </form>
+        <p id="login-error" class="text-red-400 text-sm mt-3 hidden"></p>
+      </section>
+    </div>
+  </main>
+
+  <script src="../assets/js/auth.js"></script>
+  <script>
+    const form = document.getElementById('login-form');
+    const err = document.getElementById('login-error');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      err.classList.add('hidden');
+      const email = document.getElementById('login-email').value;
+      const password = document.getElementById('login-password').value;
+      try {
+        window.EMFAuth.login({ email, password });
+        window.location.href = './portal.html';
+      } catch (e) {
+        err.textContent = e.message || 'Login failed';
+        err.classList.remove('hidden');
+      }
+    });
+  </script>
+</body>
+
+</html>

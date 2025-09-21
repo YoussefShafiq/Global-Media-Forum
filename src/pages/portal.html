@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portal • EMF</title>
+  <link rel='icon' type='image/png' href='https://egymediaforum.com/assets/front_asset/img/mainAnimation/Sympol-xl.png'>
+  <link rel="stylesheet" href="../../main.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0066ff',
+            secondary: '#00d4ff',
+            accent: '#ff3366',
+            dark: '#0a0b14',
+            'gray-900': '#111827'
+          },
+          fontFamily: {
+            'sans': ['Inter', 'system-ui', 'sans-serif']
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.8s ease-out',
+            'slide-up': 'slideUp 0.6s ease-out',
+            'slide-in': 'slideIn 0.5s ease-out',
+            'glow': 'glow 2s ease-in-out infinite alternate'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-dark text-gray-100">
+  <nav class="fixed top-0 left-0 right-0 z-50 glass-effect">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <div class="flex items-center space-x-4">
+          <img src="https://registration.egymediaforum.com/img/logo-t.png" alt="GMF logo" class="h-14 site-logo">
+          <div class=" hidden md:block">
+            <h1 class="text-xl font-bold text-white brand-title">Egypt Media Forum</h1>
+            <p class="text-sm text-gray-300 brand-subtitle">2025 • Cairo, egypt</p>
+          </div>
+        </div>
+        <div class="hidden md:flex items-center gap-4">
+          <a class="text-gray-300 hover:text-secondary" href="./register.html">Register Event</a>
+          <button id="logout-btn" class="text-red-400 hover:text-red-300">Logout</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="pt-28 relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-secondary/10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex items-center justify-between mb-6">
+        <h1 class="text-3xl font-bold">My Registrations</h1>
+        <a href="./register.html"
+          class="bg-gradient-to-r from-secondary to-primary px-5 py-3 rounded-xl font-semibold">New Registration</a>
+      </div>
+
+      <div id="user-info" class="glass-effect rounded-2xl p-6 mb-6"></div>
+
+      <div id="registrations" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+
+      <div id="empty-state" class="hidden glass-effect rounded-2xl p-8 text-center text-gray-400">
+        No registrations yet. Click "New Registration" to get started.
+      </div>
+    </div>
+  </main>
+
+  <script src="../assets/js/auth.js"></script>
+  <script>
+    if (!window.EMFAuth.requireAuth('./login.html')) { throw new Error('not auth'); }
+    const user = window.EMFAuth.currentUser();
+
+    document.getElementById('logout-btn').addEventListener('click', () => {
+      window.EMFAuth.logout();
+      window.location.href = './login.html';
+    });
+
+    const info = document.getElementById('user-info');
+    info.innerHTML = `
+      <div class="flex items-center justify-between">
+        <div>
+          <div class="text-gray-400 text-sm">Signed in as</div>
+          <div class="text-white font-semibold text-lg">${user.name}</div>
+          <div class="text-gray-400 text-sm">${user.email}</div>
+        </div>
+        <div class="text-sm text-gray-400">Member since <span>${new Date(parseInt(user.id.split('_')[1], 36)).toLocaleDateString()}</span></div>
+      </div>
+    `;
+
+    const grid = document.getElementById('registrations');
+    const empty = document.getElementById('empty-state');
+
+    const items = window.EMFAuth.myRegistrations();
+    if (!items.length) {
+      empty.classList.remove('hidden');
+    } else {
+      grid.innerHTML = items.map(r => `
+        <article class="glass-effect rounded-2xl p-6">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="text-xl font-bold">${r.name}</h3>
+            <span class="text-xs text-gray-400">${new Date(r.createdAt).toLocaleString()}</span>
+          </div>
+          <p class="text-secondary font-semibold mb-2">${r.title || ''} ${r.organization ? ' • ' + r.organization : ''}</p>
+          <div class="text-sm text-gray-300 space-y-1">
+            <div><span class="text-gray-400">Email:</span> ${r.email}</div>
+            <div><span class="text-gray-400">Category:</span> ${r.category}</div>
+            <div><span class="text-gray-400">Nationality:</span> ${r.nationality || '-'}</div>
+            <div><span class="text-gray-400">Translation:</span> ${r.translation}</div>
+            <div><span class="text-gray-400">Topics:</span> ${r.topics || '-'}</div>
+            <div><span class="text-gray-400">Website:</span> ${r.website || '-'}</div>
+            <div><span class="text-gray-400">Social:</span> ${r.social || '-'}</div>
+          </div>
+        </article>
+      `).join('');
+    }
+  </script>
+</body>
+
+</html>

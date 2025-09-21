@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register • EMF</title>
+  <link rel='icon' type='image/png' href='https://egymediaforum.com/assets/front_asset/img/mainAnimation/Sympol-xl.png'>
+  <link rel="stylesheet" href="../../main.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0066ff',
+            secondary: '#00d4ff',
+            accent: '#ff3366',
+            dark: '#0a0b14',
+            'gray-900': '#111827'
+          },
+          fontFamily: {
+            'sans': ['Inter', 'system-ui', 'sans-serif']
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.8s ease-out',
+            'slide-up': 'slideUp 0.6s ease-out',
+            'slide-in': 'slideIn 0.5s ease-out',
+            'glow': 'glow 2s ease-in-out infinite alternate'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-dark text-gray-100">
+  <nav class="fixed top-0 left-0 right-0 z-50 glass-effect">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <div class="flex items-center space-x-4">
+          <img src="https://registration.egymediaforum.com/img/logo-t.png" alt="GMF logo" class="h-14 site-logo">
+          <div class=" hidden md:block">
+            <h1 class="text-xl font-bold text-white brand-title">Egypt Media Forum</h1>
+            <p class="text-sm text-gray-300 brand-subtitle">2025 • Cairo, egypt</p>
+          </div>
+        </div>
+        <div class="hidden md:flex items-center gap-4">
+          <a class="text-secondary" href="./register.html">Register</a>
+          <a class="text-gray-300 hover:text-secondary" href="./login.html">Login</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="pt-28 relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-secondary/10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
+    <div class="max-w-7xl mx-auto px-6 gap-8">
+
+
+      <!-- Right: Sign Up + Register Event -->
+      <section class="space-y-8 ">
+
+
+        <!-- Register Event (Speaker) -->
+        <div class="glass-effect rounded-2xl p-8">
+          <div class="flex items-center justify-between mb-2">
+            <h2 class="text-2xl font-bold">Register for EMF</h2>
+            <span id="auth-status" class="text-xs text-gray-400"></span>
+          </div>
+          <p class="text-gray-400 text-sm mb-6">Submit your details to join the event. Please fill speaker-specific
+            information.</p>
+          <form id="event-form" class="space-y-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm mb-1">Full Name</label>
+                <input type="text" id="ev-name" class="w-full glass-dark px-4 py-3 rounded-xl" required />
+              </div>
+              <div>
+                <label class="block text-sm mb-1">Email</label>
+                <input type="email" id="ev-email" class="w-full glass-dark px-4 py-3 rounded-xl" required />
+              </div>
+              <div>
+                <label class="block text-sm mb-1">Password</label>
+                <input type="password" id="ev-password" minlength="6" class="w-full glass-dark px-4 py-3 rounded-xl"
+                  placeholder="Create a password" />
+              </div>
+              <div>
+                <label class="block text-sm mb-1">Confirm Password</label>
+                <input type="password" id="ev-password2" minlength="6" class="w-full glass-dark px-4 py-3 rounded-xl"
+                  placeholder="Re-enter password" />
+              </div>
+              <div>
+                <label class="block text-sm mb-1">Organization</label>
+                <input type="text" id="ev-org" class="w-full glass-dark px-4 py-3 rounded-xl" />
+              </div>
+              <div>
+                <label class="block text-sm mb-1">Title / Role</label>
+                <input type="text" id="ev-title" class="w-full glass-dark px-4 py-3 rounded-xl" />
+              </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div>
+                <label class="block text-sm mb-1">Category</label>
+                <select id="ev-category" class="w-full glass-dark px-4 py-3 rounded-xl">
+                  <option value="A">Category A (Exempt)</option>
+                  <option value="B">Category B ($250)</option>
+                  <option value="C">Category C ($500)</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-sm mb-1">Nationality</label>
+                <input id="ev-nationality" class="w-full glass-dark px-4 py-3 rounded-xl" />
+              </div>
+              <div>
+                <label class="block text-sm mb-1">Need Translation?</label>
+                <select id="ev-translation" class="w-full glass-dark px-4 py-3 rounded-xl">
+                  <option value="no">No</option>
+                  <option value="yes">Yes</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <label class="block text-sm mb-1">Topics / Focus</label>
+              <input id="ev-topics" class="w-full glass-dark px-4 py-3 rounded-xl"
+                placeholder="AI, Investigative, Visual storytelling..." />
+            </div>
+            <div>
+              <label class="block text-sm mb-1">Short Bio</label>
+              <textarea id="ev-bio" rows="4" class="w-full glass-dark px-4 py-3 rounded-xl"
+                placeholder="Tell us about your experience"></textarea>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm mb-1">Website / Portfolio</label>
+                <input id="ev-website" class="w-full glass-dark px-4 py-3 rounded-xl" />
+              </div>
+              <div>
+                <label class="block text-sm mb-1">LinkedIn / Twitter</label>
+                <input id="ev-social" class="w-full glass-dark px-4 py-3 rounded-xl" />
+              </div>
+            </div>
+            <button class="w-full bg-gradient-to-r from-secondary to-primary py-3 rounded-xl font-semibold">Submit
+              Registration</button>
+            <p id="ev-success" class="text-green-400 text-sm mt-2 hidden">Registration submitted. View it in your
+              portal.</p>
+            <p id="ev-error" class="text-red-400 text-sm mt-2 hidden"></p>
+            <p class="text-xs text-gray-500">Note: If you are not signed in, please provide a password and confirmation;
+              an account will be created with the email above.</p>
+          </form>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="../assets/js/auth.js"></script>
+  <script>
+    const suForm = document.getElementById('signup-form');
+    const suErr = document.getElementById('su-error');
+    if (suForm) {
+      suForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        suErr.classList.add('hidden');
+        const name = document.getElementById('su-name').value;
+        const email = document.getElementById('su-email').value;
+        const password = document.getElementById('su-password').value;
+        try {
+          window.EMFAuth.registerUser({ name, email, password });
+          window.location.href = './portal.html';
+        } catch (err) {
+          suErr.textContent = err.message || 'Sign up failed';
+          suErr.classList.remove('hidden');
+        }
+      });
+    }
+
+    const statusEl = document.getElementById('auth-status');
+    function updateAuthStatus() {
+      const user = window.EMFAuth.currentUser();
+      statusEl.textContent = user ? `Signed in as ${user.name}` : 'Not signed in';
+    }
+    updateAuthStatus();
+
+    const evForm = document.getElementById('event-form');
+    const evSuccess = document.getElementById('ev-success');
+    const evErr = document.getElementById('ev-error');
+    evForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      evSuccess.classList.add('hidden');
+      evErr.classList.add('hidden');
+      const payload = {
+        name: document.getElementById('ev-name').value,
+        email: document.getElementById('ev-email').value,
+        organization: document.getElementById('ev-org').value,
+        title: document.getElementById('ev-title').value,
+        category: document.getElementById('ev-category').value,
+        nationality: document.getElementById('ev-nationality').value,
+        translation: document.getElementById('ev-translation').value,
+        topics: document.getElementById('ev-topics').value,
+        bio: document.getElementById('ev-bio').value,
+        website: document.getElementById('ev-website').value,
+        social: document.getElementById('ev-social').value,
+      };
+      try {
+        // Auto create account if not signed in (require password + confirmation)
+        let user = window.EMFAuth.currentUser();
+        if (!user) {
+          const pw = (document.getElementById('ev-password').value || '').trim();
+          const pw2 = (document.getElementById('ev-password2').value || '').trim();
+          if (!pw || !pw2) throw new Error('Please provide a password and confirmation to create your account.');
+          if (pw.length < 6) throw new Error('Password must be at least 6 characters.');
+          if (pw !== pw2) throw new Error('Passwords do not match.');
+          window.EMFAuth.registerUser({ name: payload.name, email: payload.email, password: pw });
+          user = window.EMFAuth.currentUser();
+        }
+        window.EMFAuth.registerEvent(payload);
+        evSuccess.classList.remove('hidden');
+        window.location.href = './portal.html';
+      } catch (err) {
+        evErr.textContent = err.message || 'Registration failed';
+        evErr.classList.remove('hidden');
+      }
+    });
+  </script>
+</body>
+
+</html>
