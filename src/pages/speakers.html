@@ -14,11 +14,11 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#0066ff',
-                        secondary: '#00d4ff',
+                        primary: '#fe4e79',
+                        secondary: '#ffa04f',
                         accent: '#ff3366',
                         dark: '#0a0b14',
-                        'gray-900': '#111827'
+                        '[#140c25]': '#111827'
                     },
                     fontFamily: {
                         'sans': ['Inter', 'system-ui', 'sans-serif']
@@ -75,11 +75,11 @@
 
         @keyframes glow {
             from {
-                box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+                box-shadow: 0 0 20px rgba(255, 0, 187, 0.5);
             }
 
             to {
-                box-shadow: 0 0 30px rgba(0, 212, 255, 0.8);
+                box-shadow: 0 0 30px rgba(255, 0, 179, 0.8);
             }
         }
 
@@ -108,12 +108,12 @@
         }
 
         .neon-border {
-            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
-            border: 1px solid rgba(0, 212, 255, 0.5);
+            box-shadow: 0 0 20px rgba(255, 170, 0, 0.3);
+            border: 1px solid rgba(255, 166, 0, 0.5);
         }
 
         .text-gradient {
-            background: linear-gradient(135deg, #00d4ff, #0066ff);
+            background: linear-gradient(135deg, #ffa04f, #fe4e79);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -127,7 +127,7 @@
 
         .speaker-card:hover {
             transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
+            box-shadow: 0 20px 40px rgba(255, 0, 187, 0.2);
         }
 
         .speaker-card::before {
@@ -137,7 +137,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 0, 195, 0.1), transparent);
             transition: left 0.5s;
         }
 
@@ -150,7 +150,7 @@
         }
 
         .category-filter.active {
-            background: linear-gradient(135deg, #0066ff, #00d4ff);
+            background: linear-gradient(135deg, #fe4e79, #ffa04f);
             transform: scale(1.05);
         }
     </style>
@@ -387,7 +387,7 @@
     </section>
 
     <!-- Speakers Grid -->
-    <section class="py-16 bg-gray-900/30">
+    <section class="py-16 bg-[#140c25]/30">
         <div class="max-w-7xl mx-auto px-6">
             <!-- Speaker Cards Grid -->
             <div id="speakers-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
@@ -413,7 +413,7 @@
                         <p class="text-gray-400 text-sm mb-4">Award-winning journalist with 20+ years of experience in
                             digital media transformation</p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-blue-500/20 text-blue-400 px-2 py-1 rounded-full text-xs">Digital
+                            <span class="bg-purple-500/20 text-[#fe5e71] px-2 py-1 rounded-full text-xs">Digital
                                 Media</span>
                             <span
                                 class="bg-green-500/20 text-green-400 px-2 py-1 rounded-full text-xs">Leadership</span>
@@ -421,8 +421,8 @@
                         <div class="flex justify-between items-center">
                             <div class="flex space-x-2">
                                 <a href="#"
-                                    class="w-8 h-8 bg-blue-600/20 hover:bg-blue-600/40 rounded-full flex items-center justify-center transition-colors">
-                                    <i class="fab fa-linkedin-in text-blue-400 text-sm"></i>
+                                    class="w-8 h-8 bg-purple-600/20 hover:bg-purple-600/40 rounded-full flex items-center justify-center transition-colors">
+                                    <i class="fab fa-linkedin-in text-[#fe5e71] text-sm"></i>
                                 </a>
                                 <a href="#"
                                     class="w-8 h-8 bg-gray-600/20 hover:bg-gray-600/40 rounded-full flex items-center justify-center transition-colors">
@@ -458,14 +458,14 @@
                         <p class="text-gray-400 text-sm mb-4">Leading expert in AI applications for media and content
                             automation technologies</p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-cyan-500/20 text-cyan-400 px-2 py-1 rounded-full text-xs">AI/ML</span>
+                            <span class="bg-purple-500/20 text-purple-400 px-2 py-1 rounded-full text-xs">AI/ML</span>
                             <span class="bg-pink-500/20 text-pink-400 px-2 py-1 rounded-full text-xs">Automation</span>
                         </div>
                         <div class="flex justify-between items-center">
                             <div class="flex space-x-2">
                                 <a href="#"
-                                    class="w-8 h-8 bg-blue-600/20 hover:bg-blue-600/40 rounded-full flex items-center justify-center transition-colors">
-                                    <i class="fab fa-linkedin-in text-blue-400 text-sm"></i>
+                                    class="w-8 h-8 bg-purple-600/20 hover:bg-purple-600/40 rounded-full flex items-center justify-center transition-colors">
+                                    <i class="fab fa-linkedin-in text-[#fe5e71] text-sm"></i>
                                 </a>
                                 <a href="#"
                                     class="w-8 h-8 bg-purple-600/20 hover:bg-purple-600/40 rounded-full flex items-center justify-center transition-colors">
@@ -507,8 +507,8 @@
                         <div class="flex justify-between items-center">
                             <div class="flex space-x-2">
                                 <a href="#"
-                                    class="w-8 h-8 bg-blue-600/20 hover:bg-blue-600/40 rounded-full flex items-center justify-center transition-colors">
-                                    <i class="fab fa-linkedin-in text-blue-400 text-sm"></i>
+                                    class="w-8 h-8 bg-purple-600/20 hover:bg-purple-600/40 rounded-full flex items-center justify-center transition-colors">
+                                    <i class="fab fa-linkedin-in text-[#fe5e71] text-sm"></i>
                                 </a>
                                 <a href="#"
                                     class="w-8 h-8 bg-green-600/20 hover:bg-green-600/40 rounded-full flex items-center justify-center transition-colors">
@@ -530,7 +530,7 @@
                             class="w-full h-64 object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/50 to-transparent"></div>
                         <div class="absolute top-4 right-4">
-                            <span class="bg-blue-500/90 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                            <span class="bg-purple-500/90 text-white px-3 py-1 rounded-full text-xs font-semibold">
                                 <i class="fas fa-newspaper mr-1"></i>Journalist
                             </span>
                         </div>
@@ -543,7 +543,7 @@
                         <p class="text-gray-400 text-sm mb-4">Specializing in investigative data analysis and compelling
                             visualizations</p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-blue-500/20 text-blue-400 px-2 py-1 rounded-full text-xs">Data
+                            <span class="bg-purple-500/20 text-[#fe5e71] px-2 py-1 rounded-full text-xs">Data
                                 Science</span>
                             <span
                                 class="bg-green-500/20 text-green-400 px-2 py-1 rounded-full text-xs">Visualization</span>
@@ -551,8 +551,8 @@
                         <div class="flex justify-between items-center">
                             <div class="flex space-x-2">
                                 <a href="#"
-                                    class="w-8 h-8 bg-blue-600/20 hover:bg-blue-600/40 rounded-full flex items-center justify-center transition-colors">
-                                    <i class="fab fa-linkedin-in text-blue-400 text-sm"></i>
+                                    class="w-8 h-8 bg-purple-600/20 hover:bg-purple-600/40 rounded-full flex items-center justify-center transition-colors">
+                                    <i class="fab fa-linkedin-in text-[#fe5e71] text-sm"></i>
                                 </a>
                                 <a href="#"
                                     class="w-8 h-8 bg-gray-600/20 hover:bg-gray-600/40 rounded-full flex items-center justify-center transition-colors">
@@ -595,8 +595,8 @@
                         <div class="flex justify-between items-center">
                             <div class="flex space-x-2">
                                 <a href="#"
-                                    class="w-8 h-8 bg-blue-600/20 hover:bg-blue-600/40 rounded-full flex items-center justify-center transition-colors">
-                                    <i class="fab fa-linkedin-in text-blue-400 text-sm"></i>
+                                    class="w-8 h-8 bg-purple-600/20 hover:bg-purple-600/40 rounded-full flex items-center justify-center transition-colors">
+                                    <i class="fab fa-linkedin-in text-[#fe5e71] text-sm"></i>
                                 </a>
                                 <a href="#"
                                     class="w-8 h-8 bg-red-600/20 hover:bg-red-600/40 rounded-full flex items-center justify-center transition-colors">
@@ -631,14 +631,14 @@
                         <p class="text-gray-400 text-sm mb-4">Pioneering automated content generation and AI-driven
                             newsroom technologies</p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-cyan-500/20 text-cyan-400 px-2 py-1 rounded-full text-xs">AI/ML</span>
+                            <span class="bg-purple-500/20 text-purple-400 px-2 py-1 rounded-full text-xs">AI/ML</span>
                             <span class="bg-pink-500/20 text-pink-400 px-2 py-1 rounded-full text-xs">Automation</span>
                         </div>
                         <div class="flex justify-between items-center">
                             <div class="flex space-x-2">
                                 <a href="#"
-                                    class="w-8 h-8 bg-blue-600/20 hover:bg-blue-600/40 rounded-full flex items-center justify-center transition-colors">
-                                    <i class="fab fa-linkedin-in text-blue-400 text-sm"></i>
+                                    class="w-8 h-8 bg-purple-600/20 hover:bg-purple-600/40 rounded-full flex items-center justify-center transition-colors">
+                                    <i class="fab fa-linkedin-in text-[#fe5e71] text-sm"></i>
                                 </a>
                                 <a href="#"
                                     class="w-8 h-8 bg-purple-600/20 hover:bg-purple-600/40 rounded-full flex items-center justify-center transition-colors">

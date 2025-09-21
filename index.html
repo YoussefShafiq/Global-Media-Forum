@@ -16,11 +16,11 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#0066ff',
-                        secondary: '#00d4ff',
+                        primary: '#fe4e79',
+                        secondary: '#ffa04f',
                         accent: '#ff3366',
                         dark: '#0a0b14',
-                        'gray-900': '#111827'
+                        '[#140c25]': '#111827'
                     },
                     fontFamily: {
                         'sans': ['Inter', 'system-ui', 'sans-serif']
@@ -38,7 +38,7 @@
     <style>
         /* Custom gradient text */
         .text-gradient {
-            background: linear-gradient(90deg, #00d4ff, #00a2ff);
+            background: linear-gradient(90deg, #ffa04f, #fe4e79);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -92,7 +92,7 @@
         }
 
         .video-card:hover {
-            box-shadow: 0 20px 60px rgba(0, 212, 255, 0.2);
+            box-shadow: 0 20px 60px rgba(255, 0, 187, 0.2);
             border: 1px solid rgba(0, 212, 255, 0.3);
             transform: translateY(-5px);
         }
@@ -107,7 +107,7 @@
         }
 
         .video-pagination .swiper-pagination-bullet-active {
-            background: #00d4ff;
+            background: #ffa04f;
             transform: scale(1.2);
             box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
         }
@@ -119,15 +119,15 @@
             background: rgba(0, 0, 0, 0.5);
             border-radius: 50%;
             border: 1px solid rgba(0, 212, 255, 0.3);
-            color: #00d4ff !important;
+            color: #ffa04f !important;
             font-size: 18px;
             transition: all 0.3s ease;
         }
 
         .video-nav-next:hover,
         .video-nav-prev:hover {
-            background: rgba(0, 212, 255, 0.1);
-            border-color: #00d4ff;
+            background: rgba(255, 0, 195, 0.1);
+            border-color: #ffa04f;
             transform: scale(1.1);
         }
 
@@ -342,7 +342,7 @@
 
 
     <!-- Who we are -->
-    <section class="py-20 bg-gradient-to-r from-gray-900 via-dark to-gray-900">
+    <section class="py-20 bg-gradient-to-r from-[#140c25] via-dark to-[#140c25]">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <!-- Left Content -->
@@ -386,7 +386,7 @@
     </section>
 
     <!-- Countdown Section -->
-    <section class="py-20 bg-gradient-to-r from-gray-900 via-dark to-gray-900 relative">
+    <section class="py-20 bg-gradient-to-r from-[#140c25] via-dark to-[#140c25] relative">
         <div class="max-w-6xl mx-auto px-6 text-center">
             <h2 class="text-4xl md:text-5xl font-bold mb-10">
                 <span class="text-gradient">Countdown</span> <span class="text-white">to CMF 2025</span>
@@ -416,13 +416,13 @@
     </section>
 
     <!-- Program Highlights -->
-    <section class="py-20 bg-gradient-to-r from-gray-900 via-dark to-gray-900">
+    <section class="py-20 bg-gradient-to-r from-[#140c25] via-dark to-[#140c25]">
         <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
             <!-- Left Content -->
             <div>
                 <h2 class="text-4xl md:text-5xl font-bold mb-6">
-                    <span class="text-blue-400">Program</span>
+                    <span class="text-[#fe5e71]">Program</span>
                     <span class="text-white">Highlights</span>
                 </h2>
                 <p class="text-lg text-gray-300 mb-8">
@@ -431,15 +431,15 @@
                 </p>
                 <ul class="space-y-4 mb-8 text-gray-300">
                     <li class="flex items-start gap-3">
-                        <span class="text-blue-400 text-lg">•</span>
+                        <span class="text-[#fe5e71] text-lg">•</span>
                         Keynote speeches from industry pioneers
                     </li>
                     <li class="flex items-start gap-3">
-                        <span class="text-blue-400 text-lg">•</span>
+                        <span class="text-[#fe5e71] text-lg">•</span>
                         Interactive workshops and masterclasses
                     </li>
                     <li class="flex items-start gap-3">
-                        <span class="text-blue-400 text-lg">•</span>
+                        <span class="text-[#fe5e71] text-lg">•</span>
                         Panel discussions on emerging technologies
                     </li>
                 </ul>
@@ -588,7 +588,7 @@
     </section>
 
     <!-- Speakers Slider Section -->
-    <section class="py-20 bg-gradient-to-r from-gray-900 via-dark to-gray-900 relative overflow-hidden">
+    <section class="py-20 bg-gradient-to-r from-[#140c25] via-dark to-[#140c25] relative overflow-hidden">
         <div class="max-w-6xl mx-auto px-6 text-center">
             <h2 class="text-4xl md:text-5xl font-bold mb-12">
                 <span class="text-gradient">Featured</span> <span class="text-white">Speakers</span>
@@ -632,8 +632,8 @@
                                 <div class="flex justify-between items-center">
                                     <div class="flex space-x-2">
                                         <a href="#"
-                                            class="w-8 h-8 bg-blue-600/20 hover:bg-blue-600/40 rounded-full flex items-center justify-center transition-colors">
-                                            <i class="fab fa-linkedin-in text-blue-400 text-sm"></i>
+                                            class="w-8 h-8 bg-purple-600/20 hover:bg-purple-600/40 rounded-full flex items-center justify-center transition-colors">
+                                            <i class="fab fa-linkedin-in text-[#fe5e71] text-sm"></i>
                                         </a>
                                         <a href="#"
                                             class="w-8 h-8 bg-gray-600/20 hover:bg-gray-600/40 rounded-full flex items-center justify-center transition-colors">
@@ -683,8 +683,8 @@
                                 <div class="flex justify-between items-center">
                                     <div class="flex space-x-2">
                                         <a href="#"
-                                            class="w-8 h-8 bg-blue-600/20 hover:bg-blue-600/40 rounded-full flex items-center justify-center transition-colors">
-                                            <i class="fab fa-linkedin-in text-blue-400 text-sm"></i>
+                                            class="w-8 h-8 bg-purple-600/20 hover:bg-purple-600/40 rounded-full flex items-center justify-center transition-colors">
+                                            <i class="fab fa-linkedin-in text-[#fe5e71] text-sm"></i>
                                         </a>
                                         <a href="#"
                                             class="w-8 h-8 bg-gray-600/20 hover:bg-gray-600/40 rounded-full flex items-center justify-center transition-colors">
@@ -734,8 +734,8 @@
                                 <div class="flex justify-between items-center">
                                     <div class="flex space-x-2">
                                         <a href="#"
-                                            class="w-8 h-8 bg-blue-600/20 hover:bg-blue-600/40 rounded-full flex items-center justify-center transition-colors">
-                                            <i class="fab fa-linkedin-in text-blue-400 text-sm"></i>
+                                            class="w-8 h-8 bg-purple-600/20 hover:bg-purple-600/40 rounded-full flex items-center justify-center transition-colors">
+                                            <i class="fab fa-linkedin-in text-[#fe5e71] text-sm"></i>
                                         </a>
                                         <a href="#"
                                             class="w-8 h-8 bg-gray-600/20 hover:bg-gray-600/40 rounded-full flex items-center justify-center transition-colors">
@@ -785,8 +785,8 @@
                                 <div class="flex justify-between items-center">
                                     <div class="flex space-x-2">
                                         <a href="#"
-                                            class="w-8 h-8 bg-blue-600/20 hover:bg-blue-600/40 rounded-full flex items-center justify-center transition-colors">
-                                            <i class="fab fa-linkedin-in text-blue-400 text-sm"></i>
+                                            class="w-8 h-8 bg-purple-600/20 hover:bg-purple-600/40 rounded-full flex items-center justify-center transition-colors">
+                                            <i class="fab fa-linkedin-in text-[#fe5e71] text-sm"></i>
                                         </a>
                                         <a href="#"
                                             class="w-8 h-8 bg-gray-600/20 hover:bg-gray-600/40 rounded-full flex items-center justify-center transition-colors">
@@ -835,59 +835,8 @@
                                 <div class="flex justify-between items-center">
                                     <div class="flex space-x-2">
                                         <a href="#"
-                                            class="w-8 h-8 bg-blue-600/20 hover:bg-blue-600/40 rounded-full flex items-center justify-center transition-colors">
-                                            <i class="fab fa-linkedin-in text-blue-400 text-sm"></i>
-                                        </a>
-                                        <a href="#"
-                                            class="w-8 h-8 bg-gray-600/20 hover:bg-gray-600/40 rounded-full flex items-center justify-center transition-colors">
-                                            <i class="fab fa-twitter text-gray-400 text-sm"></i>
-                                        </a>
-                                    </div>
-                                    <button
-                                        class="text-secondary hover:text-primary font-semibold text-sm transition-colors">
-                                        View Bio <i class="fas fa-arrow-right ml-1"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Speaker 3 - Journalism -->
-                    <div class="swiper-slide">
-                        <div class="speaker-card glass-effect rounded-2xl overflow-hidden" data-category="journalism"
-                            data-name="Maria Gomez" data-title="Investigative Journalist">
-
-                            <div class="relative">
-                                <img src="https://egymediaforum.com/public/images_/2202428182746138.jpg"
-                                    alt="MMona El Shazly" class="w-full h-64 object-cover">
-                                <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/50 to-transparent">
-                                </div>
-                                <div class="absolute top-4 right-4">
-                                    <span class="bg-accent/90 text-white px-3 py-1 rounded-full text-xs font-semibold">
-                                        <i class="fas fa-pen mr-1"></i>TV
-                                    </span>
-                                </div>
-                                <div class="absolute bottom-4 left-4 right-4">
-                                    <h3 class="text-xl font-bold text-white mb-1">Mona El Shazly</h3>
-                                    <p class="text-secondary font-semibold text-sm">Veteran TV Anchor (Egypt)</p>
-                                </div>
-                            </div>
-
-                            <div class="p-6">
-                                <p class="text-gray-400 text-sm mb-4">
-                                    Known for uncovering global corruption and fighting for press freedom
-                                </p>
-                                <div class="flex flex-wrap gap-2 mb-4">
-                                    <span class="bg-red-500/20 text-red-400 px-2 py-1 rounded-full text-xs">Press
-                                        Freedom</span>
-                                    <span
-                                        class="bg-yellow-500/20 text-yellow-400 px-2 py-1 rounded-full text-xs">Investigations</span>
-                                </div>
-                                <div class="flex justify-between items-center">
-                                    <div class="flex space-x-2">
-                                        <a href="#"
-                                            class="w-8 h-8 bg-blue-600/20 hover:bg-blue-600/40 rounded-full flex items-center justify-center transition-colors">
-                                            <i class="fab fa-linkedin-in text-blue-400 text-sm"></i>
+                                            class="w-8 h-8 bg-purple-600/20 hover:bg-purple-600/40 rounded-full flex items-center justify-center transition-colors">
+                                            <i class="fab fa-linkedin-in text-[#fe5e71] text-sm"></i>
                                         </a>
                                         <a href="#"
                                             class="w-8 h-8 bg-gray-600/20 hover:bg-gray-600/40 rounded-full flex items-center justify-center transition-colors">
@@ -937,8 +886,59 @@
                                 <div class="flex justify-between items-center">
                                     <div class="flex space-x-2">
                                         <a href="#"
-                                            class="w-8 h-8 bg-blue-600/20 hover:bg-blue-600/40 rounded-full flex items-center justify-center transition-colors">
-                                            <i class="fab fa-linkedin-in text-blue-400 text-sm"></i>
+                                            class="w-8 h-8 bg-purple-600/20 hover:bg-purple-600/40 rounded-full flex items-center justify-center transition-colors">
+                                            <i class="fab fa-linkedin-in text-[#fe5e71] text-sm"></i>
+                                        </a>
+                                        <a href="#"
+                                            class="w-8 h-8 bg-gray-600/20 hover:bg-gray-600/40 rounded-full flex items-center justify-center transition-colors">
+                                            <i class="fab fa-twitter text-gray-400 text-sm"></i>
+                                        </a>
+                                    </div>
+                                    <button
+                                        class="text-secondary hover:text-primary font-semibold text-sm transition-colors">
+                                        View Bio <i class="fas fa-arrow-right ml-1"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Speaker 3 - Journalism -->
+                    <div class="swiper-slide">
+                        <div class="speaker-card glass-effect rounded-2xl overflow-hidden" data-category="journalism"
+                            data-name="Maria Gomez" data-title="Investigative Journalist">
+
+                            <div class="relative">
+                                <img src="https://egymediaforum.com/public/images_/2202428182746138.jpg"
+                                    alt="MMona El Shazly" class="w-full h-64 object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/50 to-transparent">
+                                </div>
+                                <div class="absolute top-4 right-4">
+                                    <span class="bg-accent/90 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                                        <i class="fas fa-pen mr-1"></i>TV
+                                    </span>
+                                </div>
+                                <div class="absolute bottom-4 left-4 right-4">
+                                    <h3 class="text-xl font-bold text-white mb-1">Mona El Shazly</h3>
+                                    <p class="text-secondary font-semibold text-sm">Veteran TV Anchor (Egypt)</p>
+                                </div>
+                            </div>
+
+                            <div class="p-6">
+                                <p class="text-gray-400 text-sm mb-4">
+                                    Known for uncovering global corruption and fighting for press freedom
+                                </p>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="bg-red-500/20 text-red-400 px-2 py-1 rounded-full text-xs">Press
+                                        Freedom</span>
+                                    <span
+                                        class="bg-yellow-500/20 text-yellow-400 px-2 py-1 rounded-full text-xs">Investigations</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <div class="flex space-x-2">
+                                        <a href="#"
+                                            class="w-8 h-8 bg-purple-600/20 hover:bg-purple-600/40 rounded-full flex items-center justify-center transition-colors">
+                                            <i class="fab fa-linkedin-in text-[#fe5e71] text-sm"></i>
                                         </a>
                                         <a href="#"
                                             class="w-8 h-8 bg-gray-600/20 hover:bg-gray-600/40 rounded-full flex items-center justify-center transition-colors">
@@ -970,7 +970,7 @@
 
 
     <!-- Wall of frame with Filter -->
-    <section class="py-20 bg-gradient-to-r from-gray-900 via-dark to-gray-900 relative">
+    <section class="py-20 bg-gradient-to-r from-[#140c25] via-dark to-[#140c25] relative">
         <div class="max-w-7xl mx-auto px-6">
             <!-- Section Header -->
             <div class="text-center mb-16">
@@ -1259,11 +1259,11 @@
     </section>
 
     <!-- From The Forum Video Section -->
-    <section class="py-20 bg-gradient-to-r from-gray-900 via-dark to-gray-900 relative overflow-hidden">
+    <section class="py-20 bg-gradient-to-r from-[#140c25] via-dark to-[#140c25] relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-6">
             <!-- Background Elements -->
-            <div class="absolute top-0 right-0 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl animate-float"></div>
-            <div class="absolute bottom-0 left-0 w-96 h-96 bg-cyan-400/10 rounded-full blur-3xl animate-float"
+            <div class="absolute top-0 right-0 w-96 h-96 bg-[#fe5e71]/10 rounded-full blur-3xl animate-float"></div>
+            <div class="absolute bottom-0 left-0 w-96 h-96 bg-purple-400/10 rounded-full blur-3xl animate-float"
                 style="animation-delay: -1.5s;"></div>
 
             <!-- Section Header -->
@@ -1294,7 +1294,7 @@
                                     </iframe>
                                     <div class="absolute top-4 left-4">
                                         <div
-                                            class="bg-blue-500/90 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                            class="bg-gradient-to-r text-white px-3 py-1 rounded-full text-sm font-semibold">
                                             <i class="fas fa-video mr-1"></i>Interview
                                         </div>
                                     </div>
@@ -1319,7 +1319,7 @@
                                     </iframe>
                                     <div class="absolute top-4 left-4">
                                         <div
-                                            class="bg-cyan-500/90 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                            class="bg-purple-500/90 text-white px-3 py-1 rounded-full text-sm font-semibold">
                                             <i class="fas fa-microphone mr-1"></i>Keynote
                                         </div>
                                     </div>
@@ -1450,7 +1450,7 @@
             <!-- View All Button -->
             <div class="text-center mt-12">
                 <button
-                    class="bg-gradient-to-r from-blue-500 to-cyan-500 px-8 py-4 rounded-full text-white font-semibold hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105">
+                    class="bg-gradient-to-r from-secondary to-primary px-8 py-4 rounded-full text-white font-semibold hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300 transform hover:scale-105">
                     <i class="fab fa-youtube mr-2"></i>View All Videos
                 </button>
             </div>
@@ -1458,7 +1458,7 @@
     </section>
 
     <!-- Latest News Section -->
-    <section class="py-20 bg-gradient-to-r from-gray-900 via-dark to-gray-900 relative overflow-hidden">
+    <section class="py-20 bg-gradient-to-r from-[#140c25] via-dark to-[#140c25] relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-10">
                 <h2 class="text-4xl md:text-5xl font-bold mb-6">
@@ -1557,11 +1557,11 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section class="py-20 bg-gradient-to-r from-gray-900 via-dark to-gray-900 relative overflow-hidden">
+    <section class="py-20 bg-gradient-to-r from-[#140c25] via-dark to-[#140c25] relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-6">
             <!-- Background Elements -->
-            <div class="absolute top-0 right-0 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl animate-float"></div>
-            <div class="absolute bottom-0 left-0 w-96 h-96 bg-cyan-400/10 rounded-full blur-3xl animate-float"
+            <div class="absolute top-0 right-0 w-96 h-96 bg-[#fe5e71]/10 rounded-full blur-3xl animate-float"></div>
+            <div class="absolute bottom-0 left-0 w-96 h-96 bg-purple-400/10 rounded-full blur-3xl animate-float"
                 style="animation-delay: -1.5s;"></div>
 
             <!-- Section Header -->
@@ -1591,7 +1591,7 @@
                                             alt="Ahmed Hassan" class="w-14 h-14 rounded-full object-cover">
                                         <div class="ml-4">
                                             <h4 class="text-lg font-bold text-white">Ahmed Hassan</h4>
-                                            <p class="text-cyan-400 text-sm">Senior Journalist, Al Ahram</p>
+                                            <p class="text-purple-400 text-sm">Senior Journalist, Al Ahram</p>
                                         </div>
                                     </div>
                                     <p class="text-gray-300 mb-6">
@@ -1622,7 +1622,7 @@
                                             alt="Layla Mahmoud" class="w-14 h-14 rounded-full object-cover">
                                         <div class="ml-4">
                                             <h4 class="text-lg font-bold text-white">Layla Mahmoud</h4>
-                                            <p class="text-cyan-400 text-sm">Media Director, Nile TV</p>
+                                            <p class="text-purple-400 text-sm">Media Director, Nile TV</p>
                                         </div>
                                     </div>
                                     <p class="text-gray-300 mb-6">
@@ -1652,7 +1652,7 @@
                                             alt="Omar Farouk" class="w-14 h-14 rounded-full object-cover">
                                         <div class="ml-4">
                                             <h4 class="text-lg font-bold text-white">Omar Farouk</h4>
-                                            <p class="text-cyan-400 text-sm">Digital Content Strategist</p>
+                                            <p class="text-purple-400 text-sm">Digital Content Strategist</p>
                                         </div>
                                     </div>
                                     <p class="text-gray-300 mb-6">
@@ -1682,7 +1682,7 @@
                                             alt="Nadia Salem" class="w-14 h-14 rounded-full object-cover">
                                         <div class="ml-4">
                                             <h4 class="text-lg font-bold text-white">Nadia Salem</h4>
-                                            <p class="text-cyan-400 text-sm">News Editor, Cairo Today</p>
+                                            <p class="text-purple-400 text-sm">News Editor, Cairo Today</p>
                                         </div>
                                     </div>
                                     <p class="text-gray-300 mb-6">
@@ -1712,7 +1712,7 @@
                                             alt="Karim Abdullah" class="w-14 h-14 rounded-full object-cover">
                                         <div class="ml-4">
                                             <h4 class="text-lg font-bold text-white">Karim Abdullah</h4>
-                                            <p class="text-cyan-400 text-sm">Documentary Filmmaker</p>
+                                            <p class="text-purple-400 text-sm">Documentary Filmmaker</p>
                                         </div>
                                     </div>
                                     <p class="text-gray-300 mb-6">
@@ -1742,7 +1742,7 @@
                                             alt="Yasmin El-Masry" class="w-14 h-14 rounded-full object-cover">
                                         <div class="ml-4">
                                             <h4 class="text-lg font-bold text-white">Yasmin El-Masry</h4>
-                                            <p class="text-cyan-400 text-sm">Social Media Manager</p>
+                                            <p class="text-purple-400 text-sm">Social Media Manager</p>
                                         </div>
                                     </div>
                                     <p class="text-gray-300 mb-6">
@@ -1780,7 +1780,7 @@
             <!-- View All Button -->
             <div class="text-center mt-12">
                 <button
-                    class="bg-gradient-to-r from-blue-500 to-cyan-500 px-8 py-4 rounded-full text-white font-semibold hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105">
+                    class="bg-gradient-to-r from-secondary to-primary px-8 py-4 rounded-full text-white font-semibold hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300 transform hover:scale-105">
                     <i class="fas fa-comments mr-2"></i>Read More Testimonials
                 </button>
             </div>
@@ -1788,7 +1788,7 @@
     </section>
 
     <!-- Partners -->
-    <section class="py-20 bg-gray-900/50">
+    <section class="py-20 bg-[#140c25]/50">
         <div class="max-w-7xl mx-auto px-6">
             <h2 class="text-3xl font-bold text-center mb-12 text-white">Trusted Partners</h2>
 
@@ -1831,7 +1831,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-gradient-to-r from-gray-900 via-dark to-gray-900">
+    <section id="contact" class="py-20 bg-gradient-to-r from-[#140c25] via-dark to-[#140c25]">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
                 <div>
