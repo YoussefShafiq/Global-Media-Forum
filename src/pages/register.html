@@ -50,9 +50,54 @@
           <a class="text-secondary" href="./register.html">Register</a>
           <a class="text-gray-300 hover:text-secondary" href="./login.html">Login</a>
         </div>
+        <!-- Mobile Hamburger -->
+        <button id="mobile-menu-button"
+          class="md:hidden text-gray-300 hover:text-white p-2 rounded-lg hover:bg-white/10">
+          <i class="fas fa-bars text-xl"></i>
+        </button>
       </div>
     </div>
   </nav>
+
+  <!-- Mobile Menu Panel -->
+  <div id="mobile-menu"
+    class="md:hidden hidden px-6 pb-4 space-y-2 glass-effect fixed top-20 h-[calc(100vh-40px)] overflow-y-auto left-0 right-0 z-50">
+    <div class="flex flex-col space-y-2">
+      <a href="../../index.html" class="px-3 py-2 rounded-xl hover:bg-white/10 text-gray-300 flex items-center gap-2"><i
+          class="fas fa-home"></i> Home</a>
+      <div>
+        <a href="./speakers.html"
+          class="px-3 py-2 rounded-xl hover:bg-white/10 text-gray-300 flex items-center justify-between">
+          <span>Speakers</span>
+          <i class="fas fa-chevron-down text-xs opacity-70"></i>
+        </a>
+        <div class="pl-4 space-y-1 mt-1">
+          <a href="./speakers.html?year=2022"
+            class="block px-3 py-2 rounded-lg hover:bg-white/10 text-gray-300">Speakers 2022</a>
+          <a href="./speakers.html?year=2023"
+            class="block px-3 py-2 rounded-lg hover:bg-white/10 text-gray-300">Speakers 2023</a>
+        </div>
+      </div>
+      <a href="./program.html" class="px-3 py-2 rounded-xl hover:bg-white/10 text-gray-300">Program</a>
+      <div>
+        <a href="./gallery.html"
+          class="px-3 py-2 rounded-xl hover:bg-white/10 text-gray-300 flex items-center justify-between">
+          <span>Gallery</span>
+          <i class="fas fa-chevron-down text-xs opacity-70"></i>
+        </a>
+        <div class="pl-4 space-y-1 mt-1">
+          <a href="./gallery.html?year=2022" class="block px-3 py-2 rounded-lg hover:bg-white/10 text-gray-300">Gallery
+            2022</a>
+          <a href="./gallery.html?year=2023" class="block px-3 py-2 rounded-lg hover:bg-white/10 text-gray-300">Gallery
+            2023</a>
+        </div>
+      </div>
+      <a href="./news.html" class="px-3 py-2 rounded-xl hover:bg-white/10 text-gray-300">News</a>
+      <a href="./who-we-are.html" class="px-3 py-2 rounded-xl hover:bg-white/10 text-gray-300">Who We Are</a>
+      <a href="./register.html" class="px-3 py-2 rounded-xl hover:bg-white/10 text-gray-300">Register</a>
+      <a href="./login.html" class="px-3 py-2 rounded-xl hover:bg-white/10 text-gray-300">Login</a>
+    </div>
+  </div>
 
   <main class="pt-28 relative overflow-hidden">
     <div class="absolute top-0 right-0 w-96 h-96 bg-secondary/10 rounded-full blur-3xl"></div>
@@ -156,6 +201,13 @@
   </main>
 
   <script src="../assets/js/auth.js"></script>
+  <script>
+    // Mobile menu toggle
+    document.getElementById('mobile-menu-button').addEventListener('click', function () {
+      const m = document.getElementById('mobile-menu');
+      m.classList.toggle('hidden');
+    });
+  </script>
   <script>
     const suForm = document.getElementById('signup-form');
     const suErr = document.getElementById('su-error');

@@ -215,12 +215,54 @@
                         class="text-gray-300 hover:text-secondary transition-colors duration-300">Who We Are</a>
                 </div>
 
-                <!-- CTA Button -->
-                <a class="bg-gradient-to-r from-secondary to-primary px-6 py-3 rounded-full text-white font-semibold hover:shadow-lg hover:shadow-secondary/25 transition-all duration-300 transform hover:scale-105"
+                <!-- Mobile Hamburger -->
+                <button id="mobile-menu-button"
+                    class="md:hidden text-gray-300 hover:text-white p-2 rounded-lg hover:bg-white/10">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+                <!-- CTA Button (desktop) -->
+                <a class="hidden md:inline-flex bg-gradient-to-r from-secondary to-primary px-6 py-3 rounded-full text-white font-semibold hover:shadow-lg hover:shadow-secondary/25 transition-all duration-300 transform hover:scale-105"
                     href="../pages/login.html">Register Now</a>
             </div>
         </div>
     </nav>
+
+    <!-- Mobile Menu Panel -->
+    <div id="mobile-menu"
+        class="md:hidden hidden px-6 pb-4 space-y-2 glass-effect fixed top-20 h-[calc(100vh-40px)] overflow-y-auto left-0 right-0 z-50">
+        <div class="flex flex-col space-y-2">
+            <a href="../../index.html"
+                class="px-3 py-2 rounded-xl hover:bg-white/10 text-gray-300 flex items-center gap-2"><i
+                    class="fas fa-home"></i> Home</a>
+            <div>
+                <a href="./speakers.html"
+                    class="px-3 py-2 rounded-xl hover:bg-white/10 text-gray-300 flex items-center justify-between"><span>Speakers</span><i
+                        class="fas fa-chevron-down text-xs opacity-70"></i></a>
+                <div class="pl-4 space-y-1 mt-1">
+                    <a href="./speakers.html?year=2022"
+                        class="block px-3 py-2 rounded-lg hover:bg-white/10 text-gray-300">Speakers 2022</a>
+                    <a href="./speakers.html?year=2023"
+                        class="block px-3 py-2 rounded-lg hover:bg-white/10 text-gray-300">Speakers 2023</a>
+                </div>
+            </div>
+            <a href="./program.html" class="px-3 py-2 rounded-xl hover:bg-white/10 text-gray-300">Program</a>
+            <div>
+                <a href="./gallery.html"
+                    class="px-3 py-2 rounded-xl hover:bg-white/10 text-gray-300 flex items-center justify-between"><span>Gallery</span><i
+                        class="fas fa-chevron-down text-xs opacity-70"></i></a>
+                <div class="pl-4 space-y-1 mt-1">
+                    <a href="./gallery.html?year=2022"
+                        class="block px-3 py-2 rounded-lg hover:bg-white/10 text-gray-300">Gallery 2022</a>
+                    <a href="./gallery.html?year=2023"
+                        class="block px-3 py-2 rounded-lg hover:bg-white/10 text-gray-300">Gallery 2023</a>
+                </div>
+            </div>
+            <a href="./news.html" class="px-3 py-2 rounded-xl hover:bg-white/10 text-gray-300">News</a>
+            <a href="./who-we-are.html" class="px-3 py-2 rounded-xl hover:bg-white/10 text-gray-300">Who We Are</a>
+            <a href="./register.html" class="px-3 py-2 rounded-xl hover:bg-white/10 text-gray-300">Register</a>
+            <a href="./login.html" class="px-3 py-2 rounded-xl hover:bg-white/10 text-gray-300">Login</a>
+        </div>
+    </div>
 
     <!-- Header Section -->
     <section class="pt-32 pb-16 relative overflow-x-hidden">
@@ -625,70 +667,30 @@
         </div>
     </footer>
     <script>
-        // Initialize page
-        document.addEventListener('DOMContentLoaded', function () {
-            // Animate timeline elements
-            const timeSlots = document.querySelectorAll('.time-slot');
-            timeSlots.forEach((slot, index) => {
-                slot.style.animationDelay = `${index * 0.1}s`;
-                slot.classList.add('animate-slide-in');
+        // Mobile menu toggle
+        const mobileBtn = document.getElementById('mobile-menu-button');
+        if (mobileBtn) {
+            mobileBtn.addEventListener('click', () => {
+                const m = document.getElementById('mobile-menu');
+                m.classList.toggle('hidden');
             });
+        }
 
-            // Search functionality
-            const searchInput = document.querySelector('input[type="text"]');
-            searchInput.addEventListener('input', function (e) {
-                const searchTerm = e.target.value.toLowerCase();
-                timeSlots.forEach(slot => {
-                    const content = slot.textContent.toLowerCase();
-                    if (content.includes(searchTerm) || searchTerm === '') {
-                        slot.style.display = 'block';
-                        slot.style.opacity = '1';
-                    } else {
-                        slot.style.opacity = '0.3';
-                    }
+        // Day tab switching
+        const dayButtons = document.querySelectorAll('button[class*="active-day"], button[class*="glass-effect"]');
+        dayButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                // Remove active class from all buttons
+                dayButtons.forEach(btn => {
+                    btn.classList.remove('active-day');
+                    btn.classList.add('glass-effect');
                 });
-            });
 
-            // filter buttons functionality
-            const filterButtons = document.querySelectorAll('.filter-tag');
-            filterButtons.forEach(button => {
-                button.addEventListener('click', function () {
-                    // Toggle active state
-                    this.classList.toggle('bg-white/20');
-                    this.classList.toggle('text-secondary');
-
-                    // Add ripple effect
-                    const ripple = document.createElement('div');
-                    ripple.classList.add('absolute', 'bg-secondary', 'rounded-full', 'opacity-20');
-                    ripple.style.width = ripple.style.height = '100px';
-                    ripple.style.left = ripple.style.top = '50%';
-                    ripple.style.transform = 'translate(-50%, -50%) scale(0)';
-                    ripple.style.animation = 'ripple 0.6s ease-out';
-
-                    this.style.position = 'relative';
-                    this.appendChild(ripple);
-
-                    setTimeout(() => ripple.remove(), 600);
-                });
-            });
-
-            // Day tab switching
-            const dayButtons = document.querySelectorAll('button[class*="active-day"], button[class*="glass-effect"]');
-            dayButtons.forEach(button => {
-                button.addEventListener('click', function () {
-                    // Remove active class from all buttons
-                    dayButtons.forEach(btn => {
-                        btn.classList.remove('active-day');
-                        btn.classList.add('glass-effect');
-                    });
-
-                    // Add active class to clicked button
-                    this.classList.remove('glass-effect');
-                    this.classList.add('active-day');
-                });
+                // Add active class to clicked button
+                this.classList.remove('glass-effect');
+                this.classList.add('active-day');
             });
         });
-
         // Add custom styles for ripple animation
         const style = document.createElement('style');
         style.textContent = `
