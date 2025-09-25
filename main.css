@@ -172,3 +172,7 @@
     font-size: 1rem;
     /* text-base */
 }
+
+footer {
+    background-color: #17002a !important;
+}

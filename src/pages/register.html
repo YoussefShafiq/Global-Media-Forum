@@ -9,37 +9,16 @@
   <link rel="stylesheet" href="../../main.css" />
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: '#fe4e79',
-            secondary: '#ffa04f',
-            accent: '#ff3366',
-            dark: '#0a0b14',
-            '[#140c25]': '#111827'
-          },
-          fontFamily: {
-            'sans': ['Inter', 'system-ui', 'sans-serif']
-          },
-          animation: {
-            'fade-in': 'fadeIn 0.8s ease-out',
-            'slide-up': 'slideUp 0.6s ease-out',
-            'slide-in': 'slideIn 0.5s ease-out',
-            'glow': 'glow 2s ease-in-out infinite alternate'
-          }
-        }
-      }
-    }
-  </script>
+
   <!-- Preconnects for performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <!-- Primary SEO -->
-  <meta name="description" content="Register for EMF 2025 — secure your spot for the Egypt Media Forum in Cairo. Choose ticket categories and submit your details.">
-  <meta name="keywords" content="EMF 2025 registration, Egypt Media Forum register, tickets, sign up, Cairo media forum">
+  <meta name="description"
+    content="Register for EMF 2025 — secure your spot for the Egypt Media Forum in Cairo. Choose ticket categories and submit your details.">
+  <meta name="keywords"
+    content="EMF 2025 registration, Egypt Media Forum register, tickets, sign up, Cairo media forum">
   <meta name="robots" content="index, follow">
   <meta name="author" content="Egypt Media Forum">
   <meta name="theme-color" content="#0a0b14">
@@ -53,7 +32,8 @@
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="Egypt Media Forum">
   <meta property="og:title" content="Register | EMF 2025 | Egypt Media Forum">
-  <meta property="og:description" content="Register for EMF 2025 and secure your place at the region’s premier media forum.">
+  <meta property="og:description"
+    content="Register for EMF 2025 and secure your place at the region’s premier media forum.">
   <meta property="og:url" content="https://egymediaforum.com/emf-2025/register/">
   <meta property="og:image" content="https://egymediaforum.com/assets/front_asset/img/whowearethumb.png">
   <meta property="og:image:width" content="1200">
@@ -65,11 +45,13 @@
   <!-- TODO: Replace with your Twitter/X handle if available -->
   <meta name="twitter:site" content="@EMF_Twitter_Handle">
   <meta name="twitter:title" content="Register | EMF 2025 | Egypt Media Forum">
-  <meta name="twitter:description" content="Register for EMF 2025 and secure your place at the region’s premier media forum.">
+  <meta name="twitter:description"
+    content="Register for EMF 2025 and secure your place at the region’s premier media forum.">
   <meta name="twitter:image" content="https://egymediaforum.com/assets/front_asset/img/whowearethumb.png">
 
   <!-- Apple Touch Icon (optional) -->
-  <link rel="apple-touch-icon" sizes="180x180" href="https://egymediaforum.com/assets/front_asset/img/mainAnimation/Sympol-xl.png">
+  <link rel="apple-touch-icon" sizes="180x180"
+    href="https://egymediaforum.com/assets/front_asset/img/mainAnimation/Sympol-xl.png">
 
   <!-- Structured Data: WebPage -->
   <script type="application/ld+json">
@@ -116,6 +98,7 @@
     <div class="flex flex-col space-y-2">
       <a href="../../index.html" class="px-3 py-2 rounded-xl hover:bg-white/10 text-gray-300 flex items-center gap-2"><i
           class="fas fa-home"></i> Home</a>
+      <a href="./who-we-are.html" class="px-3 py-2 rounded-xl hover:bg-white/10 text-gray-300">Who We Are</a>
       <div>
         <a href="./speakers.html"
           class="px-3 py-2 rounded-xl hover:bg-white/10 text-gray-300 flex items-center justify-between">
@@ -129,7 +112,7 @@
             class="block px-3 py-2 rounded-lg hover:bg-white/10 text-gray-300">Speakers 2023</a>
         </div>
       </div>
-      <a href="./program.html" class="px-3 py-2 rounded-xl hover:bg-white/10 text-gray-300">Program</a>
+      <a href="./emf.html" class="px-3 py-2 rounded-xl hover:bg-white/10 text-gray-300">Program</a>
       <div>
         <a href="./gallery.html"
           class="px-3 py-2 rounded-xl hover:bg-white/10 text-gray-300 flex items-center justify-between">
@@ -143,8 +126,16 @@
             2023</a>
         </div>
       </div>
+      <div>
+        <a href="./videos.html"
+          class="px-3 py-2 rounded-xl hover:bg-white/10 text-gray-300 flex items-center justify-between"><span>Videos</span><i
+            class="fas fa-chevron-down text-xs opacity-70"></i></a>
+        <div class="pl-4 space-y-1 mt-1">
+          <a href="./videos.html?year=2022" class="block px-3 py-2 rounded-lg hover:bg-white/10 text-gray-300">Videos 2022</a>
+          <a href="./videos.html?year=2023" class="block px-3 py-2 rounded-lg hover:bg-white/10 text-gray-300">Videos 2023</a>
+        </div>
+      </div>
       <a href="./news.html" class="px-3 py-2 rounded-xl hover:bg-white/10 text-gray-300">News</a>
-      <a href="./who-we-are.html" class="px-3 py-2 rounded-xl hover:bg-white/10 text-gray-300">Who We Are</a>
       <a href="./register.html" class="px-3 py-2 rounded-xl hover:bg-white/10 text-gray-300">Register</a>
       <a href="./login.html" class="px-3 py-2 rounded-xl hover:bg-white/10 text-gray-300">Login</a>
     </div>
@@ -251,6 +242,7 @@
     </div>
   </main>
 
+  <script type="module" src="../../main.js"></script>
   <script src="../assets/js/auth.js"></script>
   <script>
     // Mobile menu toggle

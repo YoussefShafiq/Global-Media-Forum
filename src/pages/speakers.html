@@ -9,31 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="icon" type="image/png"
         href="https://egymediaforum.com/assets/front_asset/img/mainAnimation/Sympol-xl.png" />
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#fe4e79',
-                        secondary: '#ffa04f',
-                        accent: '#ff3366',
-                        dark: '#0a0b14',
-                        '[#140c25]': '#111827'
-                    },
-                    fontFamily: {
-                        'sans': ['Inter', 'system-ui', 'sans-serif']
-                    },
-                    animation: {
-                        'fade-in': 'fadeIn 0.8s ease-out',
-                        'slide-up': 'slideUp 0.6s ease-out',
-                        'slide-in': 'slideIn 0.5s ease-out',
-                        'glow': 'glow 2s ease-in-out infinite alternate',
-                        'float': 'float 3s ease-in-out infinite'
-                    }
-                }
-            }
-        }
-    </script>
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
     <style>
@@ -234,6 +210,8 @@
                         <i class="fas fa-home"></i>
                         <span>Home</span>
                     </a>
+                    <a href="./who-we-are.html"
+                        class="text-gray-300 hover:text-secondary transition-colors duration-300">Who We Are</a>
                     <!-- Speakers with hover years -->
                     <div class="relative group">
                         <a href="" class="text-secondary transition-colors duration-300 flex items-center">
@@ -251,8 +229,8 @@
                                 2023</a>
                         </div>
                     </div>
-                    <a href="./program.html"
-                        class="text-gray-300 hover:text-secondary transition-colors duration-300">Program</a>
+                    <a href="./emf.html"
+                        class="text-gray-300 hover:text-secondary transition-colors duration-300">EMF</a>
                     <!-- Gallery with hover years -->
                     <div class="relative group">
                         <a href="./gallery.html"
@@ -271,10 +249,27 @@
                                 2023</a>
                         </div>
                     </div>
+                    <!-- Videos with hover years -->
+                    <div class="relative group">
+                        <a href="./videos.html"
+                            class="text-gray-300 hover:text-secondary transition-colors duration-300 flex items-center">
+                            <span>Videos</span>
+                            <i
+                                class="fas fa-chevron-down ml-1 text-xs opacity-70 transition-transform duration-200 group-hover:rotate-180"></i>
+                        </a>
+                        <div
+                            class="absolute left-0 top-full hidden group-hover:flex flex-col min-w-[160px] glass-effect rounded-xl p-2 z-50">
+                            <a href="./videos.html?year=2022"
+                                class="px-4 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/10">Videos
+                                2022</a>
+                            <a href="./videos.html?year=2023"
+                                class="px-4 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/10">Videos
+                                2023</a>
+                        </div>
+                    </div>
                     <a href="./news.html"
                         class="text-gray-300 hover:text-secondary transition-colors duration-300">News</a>
-                    <a href="./who-we-are.html"
-                        class="text-gray-300 hover:text-secondary transition-colors duration-300">Who We Are</a>
+
                 </div>
                 <!-- Mobile Hamburger -->
                 <button id="mobile-menu-button"
@@ -295,6 +290,7 @@
             <a href="../../index.html"
                 class="px-3 py-2 rounded-xl hover:bg-white/10 text-gray-300 flex items-center gap-2"><i
                     class="fas fa-home"></i> Home</a>
+            <a href="./who-we-are.html" class="px-3 py-2 rounded-xl hover:bg-white/10 text-gray-300">Who We Are</a>
             <div>
                 <a href="./speakers.html"
                     class="px-3 py-2 rounded-xl hover:bg-white/10 text-gray-300 flex items-center justify-between"><span>Speakers</span><i
@@ -306,7 +302,7 @@
                         class="block px-3 py-2 rounded-lg hover:bg-white/10 text-gray-300">Speakers 2023</a>
                 </div>
             </div>
-            <a href="./program.html" class="px-3 py-2 rounded-xl hover:bg-white/10 text-gray-300">Program</a>
+            <a href="./emf.html" class="px-3 py-2 rounded-xl hover:bg-white/10 text-gray-300">EMF</a>
             <div>
                 <a href="./gallery.html"
                     class="px-3 py-2 rounded-xl hover:bg-white/10 text-gray-300 flex items-center justify-between"><span>Gallery</span><i
@@ -318,31 +314,41 @@
                         class="block px-3 py-2 rounded-lg hover:bg-white/10 text-gray-300">Gallery 2023</a>
                 </div>
             </div>
+            <div>
+                <a href="./videos.html"
+                    class="px-3 py-2 rounded-xl hover:bg-white/10 text-gray-300 flex items-center justify-between"><span>Videos</span><i
+                        class="fas fa-chevron-down text-xs opacity-70"></i></a>
+                <div class="pl-4 space-y-1 mt-1">
+                    <a href="./videos.html?year=2022"
+                        class="block px-3 py-2 rounded-lg hover:bg-white/10 text-gray-300">Videos 2022</a>
+                    <a href="./videos.html?year=2023"
+                        class="block px-3 py-2 rounded-lg hover:bg-white/10 text-gray-300">Videos 2023</a>
+                </div>
+            </div>
             <a href="./news.html" class="px-3 py-2 rounded-xl hover:bg-white/10 text-gray-300">News</a>
-            <a href="./who-we-are.html" class="px-3 py-2 rounded-xl hover:bg-white/10 text-gray-300">Who We Are</a>
             <a href="./register.html" class="px-3 py-2 rounded-xl hover:bg-white/10 text-gray-300">Register</a>
             <a href="./login.html" class="px-3 py-2 rounded-xl hover:bg-white/10 text-gray-300">Login</a>
         </div>
     </div>
 
     <script>
-            (function setupNav() {
-                const btn = document.getElementById('mobile-menu-button');
-                const panel = document.getElementById('mobile-menu');
-                if (!btn || !panel) return;
-                const close = () => panel.classList.add('hidden');
-                const toggle = () => panel.classList.toggle('hidden');
-                btn.addEventListener('click', toggle);
-                panel.addEventListener('click', (e) => {
-                    if (e.target.tagName === 'A') close();
-                });
-                document.addEventListener('click', (e) => {
-                    if (!panel.classList.contains('hidden')) {
-                        if (!panel.contains(e.target) && !btn.contains(e.target)) close();
-                    }
-                });
-                document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
-            })();
+        (function setupNav() {
+            const btn = document.getElementById('mobile-menu-button');
+            const panel = document.getElementById('mobile-menu');
+            if (!btn || !panel) return;
+            const close = () => panel.classList.add('hidden');
+            const toggle = () => panel.classList.toggle('hidden');
+            btn.addEventListener('click', toggle);
+            panel.addEventListener('click', (e) => {
+                if (e.target.tagName === 'A') close();
+            });
+            document.addEventListener('click', (e) => {
+                if (!panel.classList.contains('hidden')) {
+                    if (!panel.contains(e.target) && !btn.contains(e.target)) close();
+                }
+            });
+            document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+        })();
         // Toggle Info Section
     </script>
 
@@ -640,6 +646,9 @@
             </div>
         </div>
     </footer>
+
+
+    <script type="module" src="../../main.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const searchInput = document.getElementById("speaker-search");

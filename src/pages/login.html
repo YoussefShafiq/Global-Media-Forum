@@ -9,30 +9,7 @@
   <link rel='icon' type='image/png' href='https://egymediaforum.com/assets/front_asset/img/mainAnimation/Sympol-xl.png'>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: '#fe4e79',
-            secondary: '#ffa04f',
-            accent: '#ff3366',
-            dark: '#0a0b14',
-            '[#140c25]': '#111827'
-          },
-          fontFamily: {
-            'sans': ['Inter', 'system-ui', 'sans-serif']
-          },
-          animation: {
-            'fade-in': 'fadeIn 0.8s ease-out',
-            'slide-up': 'slideUp 0.6s ease-out',
-            'slide-in': 'slideIn 0.5s ease-out',
-            'glow': 'glow 2s ease-in-out infinite alternate'
-          }
-        }
-      }
-    }
-  </script>
+
   <!-- Preconnects for performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -67,7 +44,8 @@
   <meta name="twitter:image" content="https://egymediaforum.com/assets/front_asset/img/whowearethumb.png">
 
   <!-- Apple Touch Icon (optional) -->
-  <link rel="apple-touch-icon" sizes="180x180" href="https://egymediaforum.com/assets/front_asset/img/mainAnimation/Sympol-xl.png">
+  <link rel="apple-touch-icon" sizes="180x180"
+    href="https://egymediaforum.com/assets/front_asset/img/mainAnimation/Sympol-xl.png">
 
   <!-- Structured Data: WebPage -->
   <script type="application/ld+json">
@@ -114,6 +92,7 @@
     <div class="flex flex-col space-y-2">
       <a href="../../index.html" class="px-3 py-2 rounded-xl hover:bg-white/10 text-gray-300 flex items-center gap-2"><i
           class="fas fa-home"></i> Home</a>
+      <a href="./who-we-are.html" class="px-3 py-2 rounded-xl hover:bg-white/10 text-gray-300">Who We Are</a>
       <div>
         <a href="./speakers.html"
           class="px-3 py-2 rounded-xl hover:bg-white/10 text-gray-300 flex items-center justify-between"><span>Speakers</span><i
@@ -125,7 +104,7 @@
             class="block px-3 py-2 rounded-lg hover:bg-white/10 text-gray-300">Speakers 2023</a>
         </div>
       </div>
-      <a href="./program.html" class="px-3 py-2 rounded-xl hover:bg-white/10 text-gray-300">Program</a>
+      <a href="./emf.html" class="px-3 py-2 rounded-xl hover:bg-white/10 text-gray-300">Program</a>
       <div>
         <a href="./gallery.html"
           class="px-3 py-2 rounded-xl hover:bg-white/10 text-gray-300 flex items-center justify-between"><span>Gallery</span><i
@@ -137,8 +116,16 @@
             2023</a>
         </div>
       </div>
+      <div>
+        <a href="./videos.html"
+          class="px-3 py-2 rounded-xl hover:bg-white/10 text-gray-300 flex items-center justify-between"><span>Videos</span><i
+            class="fas fa-chevron-down text-xs opacity-70"></i></a>
+        <div class="pl-4 space-y-1 mt-1">
+          <a href="./videos.html?year=2022" class="block px-3 py-2 rounded-lg hover:bg-white/10 text-gray-300">Videos 2022</a>
+          <a href="./videos.html?year=2023" class="block px-3 py-2 rounded-lg hover:bg-white/10 text-gray-300">Videos 2023</a>
+        </div>
+      </div>
       <a href="./news.html" class="px-3 py-2 rounded-xl hover:bg-white/10 text-gray-300">News</a>
-      <a href="./who-we-are.html" class="px-3 py-2 rounded-xl hover:bg-white/10 text-gray-300">Who We Are</a>
       <a href="./register.html" class="px-3 py-2 rounded-xl hover:bg-white/10 text-gray-300">Register</a>
       <a href="./login.html" class="px-3 py-2 rounded-xl hover:bg-white/10 text-gray-300">Login</a>
     </div>
@@ -219,34 +206,35 @@
     </div>
   </main>
 
+  <script type="module" src="../../main.js"></script>
   <script src="../assets/js/auth.js"></script>
   <script>
-      // Mobile menu and top padding
-      (function setupNav() {
-        const nav = document.querySelector('nav');
-        const main = document.querySelector('main') || document.body;
-        function applyTopPadding() {
-          if (!nav || !main) return;
-          const h = nav.getBoundingClientRect().height;
-          main.style.paddingTop = h + 'px';
-        }
-        applyTopPadding();
-        window.addEventListener('resize', applyTopPadding);
+    // Mobile menu and top padding
+    (function setupNav() {
+      const nav = document.querySelector('nav');
+      const main = document.querySelector('main') || document.body;
+      function applyTopPadding() {
+        if (!nav || !main) return;
+        const h = nav.getBoundingClientRect().height;
+        main.style.paddingTop = h + 'px';
+      }
+      applyTopPadding();
+      window.addEventListener('resize', applyTopPadding);
 
-        const btn = document.getElementById('mobile-menu-button');
-        const panel = document.getElementById('mobile-menu');
-        if (!btn || !panel) return;
-        const close = () => panel.classList.add('hidden');
-        const toggle = () => panel.classList.toggle('hidden');
-        btn.addEventListener('click', toggle);
-        panel.addEventListener('click', (e) => { if (e.target.tagName === 'A') close(); });
-        document.addEventListener('click', (e) => {
-          if (!panel.classList.contains('hidden')) {
-            if (!panel.contains(e.target) && !btn.contains(e.target)) close();
-          }
-        });
-        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
-      })();
+      const btn = document.getElementById('mobile-menu-button');
+      const panel = document.getElementById('mobile-menu');
+      if (!btn || !panel) return;
+      const close = () => panel.classList.add('hidden');
+      const toggle = () => panel.classList.toggle('hidden');
+      btn.addEventListener('click', toggle);
+      panel.addEventListener('click', (e) => { if (e.target.tagName === 'A') close(); });
+      document.addEventListener('click', (e) => {
+        if (!panel.classList.contains('hidden')) {
+          if (!panel.contains(e.target) && !btn.contains(e.target)) close();
+        }
+      });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+    })();
     const form = document.getElementById('login-form');
     const err = document.getElementById('login-error');
     form.addEventListener('submit', (e) => {
